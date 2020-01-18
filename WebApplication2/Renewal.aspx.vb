@@ -14,14 +14,14 @@ Public Class WebForm4
     Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         con.Open()
         Dim da As MySqlDataAdapter
-        Dim ds As New DataTable()
+        Dim dt As New DataTable()
 
         Dim cmdstr As String
-        cmdstr = "select code as JCode ,title as Title ,fromDate as StartDate,toDate as EndDate from master order by toDate,code"
+        cmdstr = "select code as JCode ,title as Title ,fromDate as StartDate, toDate as EndDate from master where todate is not null order by toDate,code"
         cmd = New MySqlCommand(cmdstr, con)
         da = New MySqlDataAdapter(cmd)
-        da.Fill(ds)
-        GridView1.DataSource = ds
+        da.Fill(dt)
+        GridView1.DataSource = dt
         GridView1.DataBind()
         con.Close()
     End Sub
