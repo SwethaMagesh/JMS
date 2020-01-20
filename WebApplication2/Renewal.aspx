@@ -12,7 +12,7 @@
          <h2><%: Title %>.</h2>
 
         <div class ="center_button">
-             <asp:Button ID="Button2" runat="server" Text="Load Renewals Approaching" />
+             <asp:Button ID="Button2" runat="server" Text="Load Renewals Approaching" style="height: 26px" />
               <br />
               <br />
         </div>

@@ -12,6 +12,18 @@
         .auto-style4 {
             width: 223px;
         }
+        .auto-style5 {
+            width: 182px;
+        }
+        .auto-style6 {
+            width: 134px;
+        }
+        .auto-style7 {
+            width: 163px;
+        }
+        .auto-style8 {
+            margin-left: 0;
+        }
     </style>
 
 
@@ -20,7 +32,7 @@
 
             <table class="auto-style1">
                 <tr>
-                    <td class="auto-style4">Jcode</td>
+                    <td class="auto-style4">Journal code*</td>
                     <td class="auto-style3">
                         <asp:TextBox ID="code" runat="server" AutoPostBack="True"></asp:TextBox>
                     </td>
@@ -32,31 +44,32 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style4">Subscription Start date</td>
+                    <td class="auto-style4">Subscription Start date*</td>
                     <td class="auto-style3">
                         <asp:TextBox ID="fromDate" runat="server" TextMode="Date"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style4">Subscription End date</td>
+                    <td class="auto-style4">Subscription End date*</td>
                     <td class="auto-style3">
                         <asp:TextBox ID="toDate" runat="server" TextMode="Date"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style4">Subscribed To</td>
+                    <td class="auto-style4">Subscribed From</td>
                     <td class="auto-style3">
-                        <asp:TextBox ID="subscribedTo" runat="server"></asp:TextBox>
+                        <asp:DropDownList ID="subscribedFrom" runat="server">
+                        </asp:DropDownList>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style4">Subscribed Date</td>
+                    <td class="auto-style4">Subscribed Date*</td>
                     <td class="auto-style3">
                         <asp:TextBox ID="subscribedOn" runat="server" TextMode="Date"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style4">Payment mode</td>
+                    <td class="auto-style4">Payment mode*</td>
                     <td class="auto-style3">
                         <asp:RadioButtonList ID="ModeRadioButton" runat="server">
                             <asp:ListItem>DD</asp:ListItem>
@@ -84,8 +97,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style4">
-                        <asp:Button ID="Button1" runat="server" Text="Save subscription" />
-                    </td>
+                        &nbsp;</td>
                     <td class="auto-style3">
                         &nbsp;</td>
                 </tr>
@@ -94,5 +106,21 @@
 
         </div>
         <p>
+            <table class="nav-justified">
+                <tr>
+                    <td class="auto-style5">
+                        <asp:Button ID="Button1" runat="server" Text="Save subscription" />
+                    </td>
+                    <td class="auto-style6">
+                        <asp:Button ID="Button2" runat="server" CssClass="auto-style8" Text="Clear contents" Width="120px" />
+                    </td>
+                    <td class="auto-style7">
+                        <asp:Button ID="Button3" runat="server" Text="Delete record" Width="132px" />
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+    </p>
+    <p>
             &nbsp;</p>
     </asp:Content>
