@@ -2,7 +2,7 @@
 
 Public Class WebForm3
     Inherits System.Web.UI.Page
-    Dim con As New MySqlConnection("server=127.0.0.1;user id=root;pwd=swetha2000;database=jms;persistsecurityinfo=True")
+    Dim con As New MySqlConnection("server=127.0.0.1;user id=root;pwd=sanjay2001;database=jms;persistsecurityinfo=True")
     Dim cmd As New MySqlCommand
     Dim cmd1 As New MySqlCommand
 
