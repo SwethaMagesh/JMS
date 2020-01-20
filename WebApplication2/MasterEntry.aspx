@@ -48,8 +48,7 @@
                     </td>
                     <td class="auto-style3">
                         
-                        <asp:Button ID="Button2" runat="server" Text="Button" />
-                    </td>
+                        &nbsp;</td>
                     <td class="auto-style3">
                         
                         &nbsp;</td>
@@ -137,5 +136,7 @@
         </div>
         <p>
             <asp:Button ID="Button1" runat="server" Text="Save to DB" />
+                        
+                        <asp:Button ID="clearContents" runat="server" Text="Clear Contents" style="height: 26px" />
         </p>
      </asp:Content>

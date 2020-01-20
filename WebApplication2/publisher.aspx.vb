@@ -22,11 +22,15 @@ Public Class publisher
         con.Close()
     End Sub
 
-    Protected Sub pubName_TextChanged(sender As Object, e As EventArgs) Handles pubName.TextChanged
-
-    End Sub
-
-    Protected Sub country_TextChanged(sender As Object, e As EventArgs)
-
+    Protected Sub clearContents_Click(sender As Object, e As EventArgs) Handles clearContents.Click
+        pubName.Text = ""
+        address.Text = ""
+        pincode.Text = ""
+        phone.Text = ""
+        email.Text = ""
+        website.Text = ""
+        country.Text = ""
+        fax.Text = ""
+        contactPerson.Text = ""
     End Sub
 End Class
