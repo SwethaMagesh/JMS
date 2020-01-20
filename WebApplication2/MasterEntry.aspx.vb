@@ -2,7 +2,7 @@
 
 Public Class WebForm2
     Inherits System.Web.UI.Page
-    Dim con1 As New MySqlConnection("server=127.0.01;user id=root;pwd=swetha2000;database=jms")
+    Dim con1 As New MySqlConnection("server=127.0.01;user id=root;pwd=sanjay2001;database=jms")
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
         con1.Open()
