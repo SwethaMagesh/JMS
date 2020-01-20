@@ -58,7 +58,7 @@
                         <li><a runat ="server" href="Subscription.aspx">Subscription entries</a></li>
                           <li><a runat ="server" href="Renewal.aspx">Renewal</a></li>
                         <li><a runat="server" href ="InwardEntry.aspx" >Inward Entry</a></li>
-                        <li><a runat ="server" href="~/">Publisher</a></li>
+                        <li><a runat ="server" href="publisher.aspx">Publisher</a></li>
                         <li><a runat="server" href="About">About</a></li>
                         <li><a runat="server" href="Contact">Contact</a></li>
                     </ul>

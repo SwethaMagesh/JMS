@@ -10,7 +10,7 @@ Public Class InwardEntry
 
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If codeBox.Text = "" Or VolNoBox.Text = "" Or IssueNoBox.Text = "" Then
-            MsgBox("Fill all mandatory fields")
+            MsgBox("Fill all mandatory fields", 0, "Attention Required")
         Else
             con.Open()
             Dim cmdstr As String

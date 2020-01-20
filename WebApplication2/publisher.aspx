@@ -9,10 +9,10 @@
             width: 100%;
         }
         .auto-style2 {
-            width: 191px;
+            width: 284px;
         }
         .auto-style3 {
-            width: 191px;
+            width: 284px;
             height: 21px;
         }
         .auto-style4 {
@@ -32,19 +32,19 @@
                 <tr>
                     <td class="auto-style2">
                         <asp:Label ID="Label1" runat="server" Text="Publisher Name"></asp:Label>
-                    </td>
+                        *</td>
                     <td>
                         <asp:TextBox ID="pubName" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Address</td>
+                    <td class="auto-style2">Address*</td>
                     <td>
                         <asp:TextBox ID="address" runat="server" TextMode="MultiLine"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Pincode</td>
+                    <td class="auto-style2">Pincode*</td>
                     <td>
                         <asp:TextBox ID="pincode" runat="server" TextMode="Number"></asp:TextBox>
                     </td>
@@ -92,10 +92,12 @@
                 </tr>
                 <tr>
                     <td class="auto-style3">
-                        <asp:Button ID="Save" runat="server" style="height: 26px" Text="Save" />
+                        <asp:Button ID="Save" runat="server" Text="Save" Width="136px" />
+                        <asp:Button ID="clearContents" runat="server" CssClass="auto-style8" Text="Clear contents" Width="136px" />
                     </td>
                     <td class="auto-style4">
-                        &nbsp;</td>
+                        <asp:Button ID="deleteRecord" runat="server" Text="Delete record" Width="136px" />
+                    </td>
                 </tr>
             </table>
         </div>
