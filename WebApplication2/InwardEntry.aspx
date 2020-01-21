@@ -23,10 +23,31 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td>
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">Title</td>
+                    <td>
+                        <asp:TextBox ID="TitleBox" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td>
+                        &nbsp;</td>
+                </tr>
+                <tr>
                     <td class="auto-style2">Volume Number*</td>
                     <td>
                         <asp:TextBox ID="VolNoBox" runat="server" TextMode="Number"></asp:TextBox>
                     </td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td>
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">Issue Number*</td>
@@ -35,16 +56,31 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td>
+                        &nbsp;</td>
+                </tr>
+                <tr>
                     <td class="auto-style2">From Date</td>
                     <td>
                         <asp:TextBox ID="FromDateBox" runat="server" TextMode="Date"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td>
+                        &nbsp;</td>
+                </tr>
+                <tr>
                     <td class="auto-style2">To Date</td>
                     <td>
                         <asp:TextBox ID="ToDateBox" runat="server" TextMode="Date"></asp:TextBox>
                     </td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td>
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">Merge Remark</td>

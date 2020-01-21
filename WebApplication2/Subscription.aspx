@@ -38,10 +38,20 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="auto-style4">&nbsp;</td>
+                    <td class="auto-style3">
+                        &nbsp;</td>
+                </tr>
+                <tr>
                     <td class="auto-style4">Title</td>
                     <td class="auto-style3">
                         <asp:TextBox ID="title" runat="server"></asp:TextBox>
                     </td>
+                </tr>
+                <tr>
+                    <td class="auto-style4">&nbsp;</td>
+                    <td class="auto-style3">
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style4">Subscription Start date*</td>
@@ -50,10 +60,20 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="auto-style4">&nbsp;</td>
+                    <td class="auto-style3">
+                        &nbsp;</td>
+                </tr>
+                <tr>
                     <td class="auto-style4">Subscription End date*</td>
                     <td class="auto-style3">
                         <asp:TextBox ID="toDate" runat="server" TextMode="Date"></asp:TextBox>
                     </td>
+                </tr>
+                <tr>
+                    <td class="auto-style4">&nbsp;</td>
+                    <td class="auto-style3">
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style4">Subscribed From</td>
@@ -63,10 +83,20 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="auto-style4">&nbsp;</td>
+                    <td class="auto-style3">
+                        &nbsp;</td>
+                </tr>
+                <tr>
                     <td class="auto-style4">Subscribed Date*</td>
                     <td class="auto-style3">
                         <asp:TextBox ID="subscribedOn" runat="server" TextMode="Date"></asp:TextBox>
                     </td>
+                </tr>
+                <tr>
+                    <td class="auto-style4">&nbsp;</td>
+                    <td class="auto-style3">
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style4">Payment mode*</td>
@@ -78,10 +108,20 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="auto-style4">&nbsp;</td>
+                    <td class="auto-style3">
+                        &nbsp;</td>
+                </tr>
+                <tr>
                     <td class="auto-style4">Payment Details (DD or UPSR No)</td>
                     <td class="auto-style3">
                         <asp:TextBox ID="paymentDetails" runat="server"></asp:TextBox>
                     </td>
+                </tr>
+                <tr>
+                    <td class="auto-style4">&nbsp;</td>
+                    <td class="auto-style3">
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style4">Remarks</td>
@@ -90,10 +130,20 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="auto-style4">&nbsp;</td>
+                    <td class="auto-style3">
+                        &nbsp;</td>
+                </tr>
+                <tr>
                     <td class="auto-style4">Voucher Ref Number</td>
                     <td class="auto-style3">
                         <asp:TextBox ID="VoucherRef" runat="server"></asp:TextBox>
                     </td>
+                </tr>
+                <tr>
+                    <td class="auto-style4">&nbsp;</td>
+                    <td class="auto-style3">
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style4">

@@ -6,7 +6,7 @@
     h1
     {
         align-content:center ;
-        font-size : medium;
+        font-size : large;
         text-align: center;
         font-family: 'Segoe UI';
         font-style: italic;
