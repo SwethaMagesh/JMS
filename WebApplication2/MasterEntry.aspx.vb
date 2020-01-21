@@ -2,7 +2,8 @@
 
 Public Class WebForm2
     Inherits System.Web.UI.Page
-    Dim con1 As New MySqlConnection("server=127.0.01;user id=root;pwd=sanjay2001;database=jms")
+    Dim constr As String = ConfigurationManager.ConnectionStrings("jmsConnectionString2").ConnectionString
+    Dim con1 As New MySqlConnection(constr)
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Me.IsPostBack Then
             publisher.Items.Add("--Select--")

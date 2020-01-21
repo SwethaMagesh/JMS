@@ -3,7 +3,8 @@
 
 Public Class publisher
     Inherits System.Web.UI.Page
-    Dim con As New MySqlConnection("server=127.0.01;user id=root;pwd=sanjay2001;database=jms")
+    Dim constr As String = ConfigurationManager.ConnectionStrings("jmsConnectionString2").ConnectionString
+    Dim con As New MySqlConnection(constr)
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
