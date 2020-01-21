@@ -1,8 +1,8 @@
 ﻿Imports MySql.Data.MySqlClient
-
 Public Class WebForm3
     Inherits System.Web.UI.Page
-    Dim con As New MySqlConnection("server=127.0.0.1;user id=root;pwd=sanjay2001;database=jms;persistsecurityinfo=True")
+    Dim constr As String = ConfigurationManager.ConnectionStrings("jmsConnectionString2").ConnectionString
+    Dim con As New MySqlConnection(constr)
     Dim cmd As New MySqlCommand
     Dim cmd1 As New MySqlCommand
 
