@@ -3,7 +3,8 @@
 
 Public Class publisher
     Inherits System.Web.UI.Page
-    Dim con As New MySqlConnection("server=127.0.01;user id=root;pwd=sanjay2001;database=jms")
+    Dim constr As String = ConfigurationManager.ConnectionStrings("jmsConnectionString2").ConnectionString
+    Dim con As New MySqlConnection(constr)
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
@@ -22,11 +23,15 @@ Public Class publisher
         con.Close()
     End Sub
 
-    Protected Sub pubName_TextChanged(sender As Object, e As EventArgs) Handles pubName.TextChanged
-
-    End Sub
-
-    Protected Sub country_TextChanged(sender As Object, e As EventArgs)
-
+    Protected Sub clearContents_Click(sender As Object, e As EventArgs) Handles clearContents.Click
+        pubName.Text = ""
+        address.Text = ""
+        pincode.Text = ""
+        phone.Text = ""
+        email.Text = ""
+        website.Text = ""
+        country.Text = ""
+        fax.Text = ""
+        contactPerson.Text = ""
     End Sub
 End Class

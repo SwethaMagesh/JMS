@@ -1,46 +1,49 @@
 ﻿Imports MySql.Data.MySqlClient
-
 Public Class WebForm3
     Inherits System.Web.UI.Page
-    Dim con As New MySqlConnection("server=127.0.0.1;user id=root;pwd=sanjay2001;database=jms;persistsecurityinfo=True")
+    Dim constr As String = ConfigurationManager.ConnectionStrings("jmsConnectionString2").ConnectionString
+    Dim con As New MySqlConnection(constr)
     Dim cmd As New MySqlCommand
     Dim cmd1 As New MySqlCommand
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        con.Open()
-        Dim cmd As New MySqlCommand("select pubName as test from publisher", con)
-        Dim dr As MySqlDataReader
-        dr = cmd.ExecuteReader()
-        While dr.Read()
-            subscribedFrom.Items.Add(dr(0).ToString)
-        End While
-        subscribedFrom.DataBind()
-        con.Close()
-
-
-
+        'subscribedFrom.Items.Clear()
+        If Not Me.IsPostBack Then
+            subscribedFrom.Items.Add("--Select--")
+            con.Open()
+            Dim cmd As New MySqlCommand("select pubName as test from publisher", con)
+            Dim dr As MySqlDataReader
+            dr = cmd.ExecuteReader()
+            While dr.Read()
+                subscribedFrom.Items.Add(dr(0).ToString)
+            End While
+            subscribedFrom.DataBind()
+            con.Close()
+        End If
     End Sub
 
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If code.Text = "" Or fromDate.Text = "" Or toDate.Text = "" Then
-            MsgBox("Fill all mandatory fields")
+            MsgBox("Fill all mandatory fields", 0, "Attention Required")
         Else
             Try
                 con.Open()
                 Dim commandstr As String
-                commandstr = "insert into subscription (code, fromDate, toDate, subscribedFrom,  remarks, subscribedOn,paymentMode,paymentDetails,voucherRef) values (" & code.Text & ",'" & fromDate.Text & "','" & toDate.Text & "','" & subscribedFrom.Text & "','" & remarks.Text & "','" & subscribedOn.Text & "','" & ModeRadioButton.Text & "','" & paymentDetails.Text & "','" & VoucherRef.Text & "')"
+                commandstr = "insert into subscription (code, fromDate, toDate, subscribedFrom,  remarks, subscribedOn,paymentMode,paymentDetails,voucherRef) values (" & code.Text & ",'" & fromDate.Text & "','" & toDate.Text & "','" & subscribedFrom.SelectedItem.ToString & "','" & remarks.Text & "','" & subscribedOn.Text & "','" & ModeRadioButton.Text & "','" & paymentDetails.Text & "','" & VoucherRef.Text & "')"
                 cmd = New MySqlCommand(commandstr, con)
+                MsgBox(subscribedFrom.SelectedItem.ToString)
                 cmd.ExecuteNonQuery()
                 commandstr = "update master  set  fromDate='" & fromDate.Text & "', toDate='" & toDate.Text & "', subscribedFrom='" & subscribedFrom.Text & "' where code = " & Val(code.Text)
                 cmd1 = New MySqlCommand(commandstr, con)
                 cmd1.ExecuteNonQuery()
+                MsgBox("Saved successfully", 0, "Saved")
                 con.Close()
             Catch ex As Exception
                 MsgBox("database error" & ex.ToString)
                 con.Close()
 
             End Try
-            MsgBox("Saved successfully")
+
         End If
 
 
@@ -67,7 +70,7 @@ Public Class WebForm3
             While dr.Read()
                 ' fromDate.Text = dr(0).ToString
                 ' toDate.Text = dr(1).ToString
-                subscribedFrom.Text = dr(0).ToString
+                ' subscribedFrom.text = dr(0).ToString
 
             End While
 
@@ -86,7 +89,7 @@ Public Class WebForm3
         fromDate.Text = ""
         toDate.Text = ""
         ModeRadioButton.ClearSelection()
-        subscribedFrom.Text = ""
+        subscribedFrom.ClearSelection()
         subscribedOn.Text = ""
         paymentDetails.Text = ""
         VoucherRef.Text = ""

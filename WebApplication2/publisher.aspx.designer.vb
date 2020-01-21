@@ -111,4 +111,22 @@ Partial Public Class publisher
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Save As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''clearContents control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents clearContents As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''deleteRecord control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents deleteRecord As Global.System.Web.UI.WebControls.Button
 End Class

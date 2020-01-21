@@ -2,26 +2,28 @@
 
 Public Class WebForm2
     Inherits System.Web.UI.Page
-    Dim con1 As New MySqlConnection("server=127.0.01;user id=root;pwd=sanjay2001;database=jms")
+    Dim constr As String = ConfigurationManager.ConnectionStrings("jmsConnectionString2").ConnectionString
+    Dim con1 As New MySqlConnection(constr)
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-
-        con1.Open()
-        Dim cmd As New MySqlCommand("select pubName as test from publisher", con1)
-        Dim dr As MySqlDataReader
-        dr = cmd.ExecuteReader()
-        While dr.Read()
-            publisher.Items.Add(dr(0).ToString)
-        End While
-        publisher.DataBind()
-        con1.Close()
-
+        If Not Me.IsPostBack Then
+            publisher.Items.Add("--Select--")
+            con1.Open()
+            Dim cmd As New MySqlCommand("select pubName as test from publisher", con1)
+            Dim dr As MySqlDataReader
+            dr = cmd.ExecuteReader()
+            While dr.Read()
+                publisher.Items.Add(dr(0).ToString)
+            End While
+            publisher.DataBind()
+            con1.Close()
+        End If
     End Sub
 
 
 
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If code.Text = "" Or title.Text = "" Or periodicity.SelectedItem.ToString = "" Or placementNo.Text = "" Or publisher.SelectedItem.ToString = "" Then
-            MsgBox("Please fill all required fields")
+            MsgBox("Please fill all required fields", 0, "Attention Required")
         Else
             con1.Open()
             Dim cmd As MySqlCommand
@@ -31,9 +33,20 @@ Public Class WebForm2
             cmd = New MySqlCommand(valuestr, con1)
             cmd.ExecuteNonQuery()
             con1.Close()
-            MsgBox("Entry saved")
+            MsgBox("Saved Successfully", 0, "Saved")
         End If
     End Sub
 
-
+    Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles clearContents.Click
+        code.Text = ""
+        title.Text = ""
+        acqdate.Text = ""
+        periodicity.ClearSelection()
+        remark.Text = ""
+        placementNo.Text = ""
+        subject.Text = ""
+        dept.Text = ""
+        publisher.ClearSelection()
+        issn.Text = ""
+    End Sub
 End Class
