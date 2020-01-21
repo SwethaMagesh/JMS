@@ -40,4 +40,20 @@ Public Class WebForm1
 
         con1.Close()
     End Sub
+
+    Protected Sub DropDownList1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DropDownList1.SelectedIndexChanged
+
+    End Sub
+
+    Protected Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+
+    End Sub
+
+    Protected Sub TextBox13_TextChanged(sender As Object, e As EventArgs) Handles TextBox13.TextChanged
+
+    End Sub
+
+    Protected Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
+
+    End Sub
 End Class
