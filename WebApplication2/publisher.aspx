@@ -32,10 +32,21 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="auto-style2">
+                        &nbsp;</td>
+                    <td>
+                        &nbsp;</td>
+                </tr>
+                <tr>
                     <td class="auto-style2">Address*</td>
                     <td>
                         <asp:TextBox ID="address" runat="server" TextMode="MultiLine"></asp:TextBox>
                     </td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td>
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">Pincode*</td>
@@ -44,10 +55,20 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td>
+                        &nbsp;</td>
+                </tr>
+                <tr>
                     <td class="auto-style2">Phone</td>
                     <td>
                         <asp:TextBox ID="phone" runat="server" TextMode="Phone"></asp:TextBox>
                     </td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td>
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">E-mail</td>
@@ -56,10 +77,20 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td>
+                        &nbsp;</td>
+                </tr>
+                <tr>
                     <td class="auto-style2">Website</td>
                     <td>
                         <asp:TextBox ID="website" runat="server" TextMode="Url"></asp:TextBox>
                     </td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td>
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style2">Country</td>
@@ -68,10 +99,20 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td>
+                        &nbsp;</td>
+                </tr>
+                <tr>
                     <td class="auto-style2">Fax</td>
                     <td>
                         <asp:TextBox ID="fax" runat="server" TextMode="Phone"></asp:TextBox>
                     </td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td>
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style3">Contact Person</td>

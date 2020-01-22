@@ -1,12 +1,15 @@
-﻿Imports MySql.Data.MySqlClient
+Imports MySql.Data.MySqlClient
 Public Class WebForm1
     Inherits System.Web.UI.Page
+
     Dim constr As String = ConfigurationManager.ConnectionStrings("jmsConnectionString2").ConnectionString
     Dim con As New MySqlConnection(constr)
     Dim cmd As New MySqlCommand
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
     End Sub
+
 
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Save.Click
         Dim cmdstr As String

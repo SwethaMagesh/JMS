@@ -23,6 +23,15 @@ Partial Public Class InwardEntry
     Protected WithEvents codeBox As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''TitleBox control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents TitleBox As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''VolNoBox control.
     '''</summary>
     '''<remarks>

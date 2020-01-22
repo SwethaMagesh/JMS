@@ -10,15 +10,21 @@ Public Class WebForm3
         'subscribedFrom.Items.Clear()
         If Not Me.IsPostBack Then
             subscribedFrom.Items.Add("--Select--")
-            con.Open()
-            Dim cmd As New MySqlCommand("select pubName as test from publisher", con)
-            Dim dr As MySqlDataReader
-            dr = cmd.ExecuteReader()
-            While dr.Read()
-                subscribedFrom.Items.Add(dr(0).ToString)
-            End While
-            subscribedFrom.DataBind()
-            con.Close()
+            Try
+                con.Open()
+                Dim cmd As New MySqlCommand("select pubName as test from publisher", con)
+                Dim dr As MySqlDataReader
+                dr = cmd.ExecuteReader()
+                While dr.Read()
+                    subscribedFrom.Items.Add(dr(0).ToString)
+                End While
+                subscribedFrom.DataBind()
+                con.Close()
+
+            Catch ex As MySql.Data.MySqlClient.MySqlException
+                MsgBox("Error " & ex.ToString)
+            End Try
+
         End If
     End Sub
 
@@ -38,7 +44,7 @@ Public Class WebForm3
                 cmd1.ExecuteNonQuery()
                 MsgBox("Saved successfully", 0, "Saved")
                 con.Close()
-            Catch ex As Exception
+            Catch ex As MySql.Data.MySqlClient.MySqlException
                 MsgBox("database error" & ex.ToString)
                 con.Close()
 

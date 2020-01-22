@@ -14,13 +14,18 @@ Public Class publisher
         If pubName.Text = "" Or address.Text = "" Or pincode.Text = "" Then
             MsgBox("Please fill the mandatory fields", 0, "Attention Required")
         End If
-        con.Open()
-        Dim cmd As MySqlCommand
-        Dim valuestr As String
-        valuestr = "insert into publisher(pubName,address,pincode,country,email,phone,fax,website,contactPerson) values('" & pubName.Text & "','" & address.Text & "'," & Val(pincode.Text) & ",'" & country.Text & "','" & email.Text & "'," & Val(phone.Text) & "," & Val(fax.Text) & ",'" & website.Text & "','" & contactPerson.Text & "')"
-        cmd = New MySqlCommand(valuestr, con)
-        cmd.ExecuteNonQuery()
-        con.Close()
+        Try
+            con.Open()
+            Dim cmd As MySqlCommand
+            Dim valuestr As String
+            valuestr = "insert into publisher(pubName,address,pincode,country,email,phone,fax,website,contactPerson) values('" & pubName.Text & "','" & address.Text & "'," & Val(pincode.Text) & ",'" & country.Text & "','" & email.Text & "'," & Val(phone.Text) & "," & Val(fax.Text) & ",'" & website.Text & "','" & contactPerson.Text & "')"
+            cmd = New MySqlCommand(valuestr, con)
+            cmd.ExecuteNonQuery()
+            con.Close()
+        Catch ex As MySql.Data.MySqlClient.MySqlException
+            MsgBox(ex.ToString)
+        End Try
+
     End Sub
 
     Protected Sub clearContents_Click(sender As Object, e As EventArgs) Handles clearContents.Click
