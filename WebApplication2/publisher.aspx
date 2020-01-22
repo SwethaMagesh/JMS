@@ -1,8 +1,8 @@
-﻿<%@ Page Language="vb"  MasterPageFile="~/Site.Master" AutoEventWireup="false" CodeBehind="publisher.aspx.vb" Inherits="WebApplication2.publisher" %>
+﻿<%@ Page Title= "Publisher Page" Language="vb"  MasterPageFile="~/Site.Master" AutoEventWireup="false" CodeBehind="publisher.aspx.vb" Inherits="WebApplication2.publisher" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-
+    <h2>Publisher</h2>
    
     <style type="text/css">
         .auto-style1 {
@@ -23,12 +23,6 @@
     
         <div>
             <table class="auto-style1">
-                <tr>
-                    <td class="auto-style2">
-                        &nbsp;</td>
-                    <td>
-                        &nbsp;</td>
-                </tr>
                 <tr>
                     <td class="auto-style2">
                         <asp:Label ID="Label1" runat="server" Text="Publisher Name"></asp:Label>
