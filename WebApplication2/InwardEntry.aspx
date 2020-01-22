@@ -19,7 +19,7 @@
                 <tr>
                     <td class="auto-style2">JCode*</td>
                     <td>
-                        <asp:TextBox ID="codeBox" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="codeBox" runat="server" AutoPostBack="True"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
