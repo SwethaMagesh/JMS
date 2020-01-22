@@ -54,11 +54,11 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat ="server" href="MasterEntry.aspx">Master For Journals</a></li>
-                        <li><a runat ="server" href="Subscription.aspx">Subscription entries</a></li>
-                          <li><a runat ="server" href="Renewal.aspx">Renewal</a></li>
-                        <li><a runat="server" href ="InwardEntry.aspx" >Inward Entry</a></li>
-                        <li><a runat ="server" href="publisher.aspx">Publisher</a></li>
+                        <li><a runat ="server" href="~/MasterEntry.aspx">Master For Journals</a></li>
+                        <li><a runat ="server" href="~/Subscription.aspx">Subscription entries</a></li>
+                          <li><a runat ="server" href="~/Renewal.aspx">Renewal</a></li>
+                        <li><a runat="server" href ="~/InwardEntry.aspx" >Inward Entry</a></li>
+                        <li><a runat ="server" href="~/publisher.aspx">Publisher</a></li>
                     </ul>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-﻿<%@ Page  Language="vb" AutoEventWireup="false" CodeBehind="Subscription.aspx.vb" Inherits="WebApplication2.WebForm3"  MasterPageFile="~/Site.Master" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Subscription.aspx.vb" Inherits="WebApplication2.WebForm3"  MasterPageFile="~/Site.Master" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
    
     <h2>Subscription Page</h2>
