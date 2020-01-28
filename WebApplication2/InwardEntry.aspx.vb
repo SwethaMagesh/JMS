@@ -16,10 +16,15 @@ Public Class InwardEntry
             Try
                 con.Open()
                 Dim cmdstr As String
-                cmdstr = "Insert into "
+                cmdstr = "Insert into inwardentry (jcode,volno,issueno,fromdate,todate,mergeremark) values (" & codeBox.Text & "," & VolNoBox.Text & "," & IssueNoBox.Text & ",'" & FromDateBox.Text & "','" & ToDateBox.Text & "','" & MergeRemarkBox.Text & "'"
+                cmd = New MySqlCommand(cmdstr, con)
+                cmd.ExecuteNonQuery()
+                con.Close()
+                MsgBox("Saved successfully")
+
 
             Catch ex As Exception
-
+                MsgBox("error" & ex.ToString)
             End Try
 
         End If
