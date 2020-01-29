@@ -37,24 +37,18 @@ Public Class WebForm3
                 Dim commandstr As String
                 commandstr = "insert into subscription (code, fromDate, toDate, subscribedFrom,  remarks, subscribedOn,paymentMode,paymentDetails,voucherRef) values (" & code.Text & ",'" & fromDate.Text & "','" & toDate.Text & "','" & subscribedFrom.SelectedItem.ToString & "','" & remarks.Text & "','" & subscribedOn.Text & "','" & ModeRadioButton.Text & "','" & paymentDetails.Text & "','" & VoucherRef.Text & "')"
                 cmd = New MySqlCommand(commandstr, con)
-                MsgBox(subscribedFrom.SelectedItem.ToString)
                 cmd.ExecuteNonQuery()
                 commandstr = "update master  set  fromDate='" & fromDate.Text & "', toDate='" & toDate.Text & "', subscribedFrom='" & subscribedFrom.Text & "' where code = " & Val(code.Text)
                 cmd1 = New MySqlCommand(commandstr, con)
                 cmd1.ExecuteNonQuery()
                 MsgBox("Saved successfully", 0, "Saved")
                 con.Close()
+                Button2_Click(Nothing, Nothing)
             Catch ex As MySql.Data.MySqlClient.MySqlException
                 MsgBox("database error" & ex.ToString)
                 con.Close()
-
             End Try
-
         End If
-
-
-
-
     End Sub
 
     Protected Sub code_TextChanged(sender As Object, e As EventArgs) Handles code.TextChanged
@@ -79,14 +73,10 @@ Public Class WebForm3
                 ' subscribedFrom.text = dr(0).ToString
 
             End While
-
             con.Close()
-
         Catch ex As MySql.Data.MySqlClient.MySqlException
             MsgBox(ex.ToString & "Database error")
-
         End Try
-
     End Sub
 
     Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -100,6 +90,8 @@ Public Class WebForm3
         paymentDetails.Text = ""
         VoucherRef.Text = ""
         remarks.Text = ""
+        code.Text = Now.ToShortDateString
+        fromDate.Text = Now.ToShortDateString
 
     End Sub
 End Class
