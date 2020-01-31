@@ -45,8 +45,15 @@ Public Class WebForm3
                 con.Close()
                 Button2_Click(Nothing, Nothing)
             Catch ex As MySql.Data.MySqlClient.MySqlException
-                MsgBox("database error" & ex.ToString)
-                con.Close()
+               
+                If ex.Number = 3819 Then
+                    MsgBox("Check the from and to dates provided")
+                Else
+                    MsgBox("database error" & ex.ToString)
+                    con.Close()
+
+                End If
+
             End Try
         End If
     End Sub
