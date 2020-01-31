@@ -159,7 +159,7 @@
             <table class="nav-justified">
                 <tr>
                     <td class="auto-style5">
-                        <asp:Button ID="Button1" runat="server" Text="Save subscription" />
+                        <asp:Button ID="Button1" runat="server" Text="Save subscription" style="height: 26px" />
                     </td>
                     <td class="auto-style6">
                         <asp:Button ID="Button2" runat="server" CssClass="auto-style8" Text="Clear contents" Width="120px" />
