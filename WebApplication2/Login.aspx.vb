@@ -1,4 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports System.Data.SqlClient
+Imports System.Web.Security
 Public Class WebForm5
     Inherits System.Web.UI.Page
     Dim constr As String = ConfigurationManager.ConnectionStrings("jmsConnectionString2").ConnectionString
