@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class publisher
 
     '''<summary>
+    '''pubId control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pubId As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''Label1 control.
     '''</summary>
     '''<remarks>
@@ -120,6 +129,15 @@ Partial Public Class publisher
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents clearContents As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''update control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents update As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''deleteRecord control.

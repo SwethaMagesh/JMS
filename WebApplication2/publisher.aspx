@@ -9,20 +9,40 @@
             width: 100%;
         }
         .auto-style2 {
-            width: 284px;
+            width: 122px;
         }
         .auto-style3 {
-            width: 284px;
+            width: 122px;
             height: 21px;
         }
         .auto-style4 {
             height: 21px;
+        }
+        .auto-style5 {
+            width: 122px;
+            height: 42px;
+        }
+        .auto-style6 {
+            height: 42px;
         }
     </style>
 
     
         <div>
             <table class="auto-style1">
+                <tr>
+                    <td class="auto-style2">
+                        Publisher ID</td>
+                    <td>
+                        <asp:TextBox ID="pubId" runat="server" AutoPostBack="True"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">
+                        &nbsp;</td>
+                    <td>
+                        &nbsp;</td>
+                </tr>
                 <tr>
                     <td class="auto-style2">
                         <asp:Label ID="Label1" runat="server" Text="Publisher Name"></asp:Label>
@@ -38,7 +58,7 @@
                         &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Address*</td>
+                    <td class="auto-style2">Address</td>
                     <td>
                         <asp:TextBox ID="address" runat="server" TextMode="MultiLine"></asp:TextBox>
                     </td>
@@ -121,17 +141,20 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style4">
-                        &nbsp;</td>
+                    <td class="auto-style5"></td>
+                    <td class="auto-style6">
+                        </td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">
+                    <td class="auto-style4" colspan="2">
                         <asp:Button ID="Save" runat="server" Text="Save" Width="136px" />
+                        &nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Button ID="clearContents" runat="server" CssClass="auto-style8" Text="Clear contents" Width="136px" />
-                    </td>
-                    <td class="auto-style4">
+                    &nbsp;&nbsp;&nbsp;
+                        <asp:Button ID="update" runat="server" CssClass="auto-style8" Text="Update and Save" Width="136px" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:Button ID="deleteRecord" runat="server" Text="Delete record" Width="136px" />
+                    &nbsp;&nbsp;&nbsp;
                     </td>
                 </tr>
             </table>

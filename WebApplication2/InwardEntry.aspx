@@ -51,7 +51,7 @@
                 <tr>
                     <td class="auto-style2">Issue Number*</td>
                     <td>
-                        <asp:TextBox ID="IssueNoBox" runat="server" TextMode="Number"></asp:TextBox>
+                        <asp:TextBox ID="IssueNoBox" runat="server" TextMode="Number" AutoPostBack="True"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>

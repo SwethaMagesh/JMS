@@ -161,6 +161,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="InwardEntry.aspx" />
     <Content Include="publisher.aspx" />
+    <Content Include="Report1.aspx" />
     <Content Include="WebForm1.aspx" />
     <Content Include="MasterEntry.aspx" />
     <Content Include="Subscription.aspx" />
@@ -261,6 +262,13 @@
     <Compile Include="publisher.aspx.vb">
       <DependentUpon>publisher.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report1.aspx.designer.vb">
+      <DependentUpon>Report1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report1.aspx.vb">
+      <DependentUpon>Report1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Site.Master.designer.vb">
       <DependentUpon>Site.Master</DependentUpon>
