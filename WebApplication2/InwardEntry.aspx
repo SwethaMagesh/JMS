@@ -9,7 +9,7 @@
             width: 100%;
         }
         .auto-style2 {
-            width: 262px;
+            width: 123px;
         }
     </style>
 
@@ -92,10 +92,15 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">
+                    <td colspan="2">
                         <asp:Button ID="Button1" runat="server" Text="Save issue" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:Button ID="Button2" runat="server" Text="Clear contents" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:Button ID="Button3" runat="server" Text="Update and Save" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:Button ID="Button4" runat="server" Text="Delete record" />
                     </td>
-                    <td>&nbsp;</td>
                 </tr>
             </table>
         </div>
