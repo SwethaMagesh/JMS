@@ -15,8 +15,8 @@
                     </td>
                     <td style="width: 439px">
                         <br />
-                        Of :&nbsp;
-                        <asp:DropDownList ID="List2" runat="server">
+                        Of :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+                        <asp:DropDownList ID="List2" runat="server" AutoPostBack="True">
                             <asp:ListItem Value="0">Publishers</asp:ListItem>
                             <asp:ListItem Value="1">Journals</asp:ListItem>
                             <asp:ListItem Value="2">Subscriptions</asp:ListItem>
@@ -34,6 +34,17 @@
                         <br />
                         <br />
                     </td>
+                </tr>
+                <tr>
+                    <td style="width: 312px">
+                        &nbsp;</td>
+                    <td style="width: 439px">
+                        &nbsp;Group by :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:DropDownList ID="Groupby" runat="server" AutoPostBack="True">
+                        </asp:DropDownList>
+                    </td>
+                    <td>
+                        &nbsp;</td>
                 </tr>
                 <tr>
                     <td style="width: 312px">&nbsp;</td>
