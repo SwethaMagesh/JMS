@@ -104,13 +104,13 @@ Partial Public Class publisher
     Protected WithEvents fax As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''contactPerson control.
+    '''agentname control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents contactPerson As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents agentname As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Save control.
@@ -147,4 +147,13 @@ Partial Public Class publisher
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents deleteRecord As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''GridView1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
 End Class

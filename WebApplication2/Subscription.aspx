@@ -26,10 +26,16 @@
         }
     </style>
 
-
-   
-        <div>
-
+    <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#subscription">Subscription</a>
+        </h4>
+      </div>
+      <div id="subscription" class="panel-collapse collapse in">
+        <div class="panel-body">
+  
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style4">Journal code*</td>
@@ -172,13 +178,7 @@
                     <td class="auto-style3">
                         &nbsp;</td>
                 </tr>
-                <tr>
-                    <td class="auto-style4">
-                        &nbsp;</td>
-                    <td class="auto-style3">
-                        &nbsp;</td>
-                </tr>
-                   
+                                   
                </table>
 
         </div>
@@ -200,6 +200,21 @@
                 </tr>
             </table>
     </p>
-    <p>
-            &nbsp;</p>
+
+           </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#subscriptiondetails">Subscription Details</a>
+        </h4>
+      </div>
+      <div id="subscriptiondetails" class="panel-collapse collapse">
+        <div class="panel-body">
+            <asp:GridView ID="GridView1" runat="server">
+            </asp:GridView>
+        </div>
+      </div>
+    </div>
     </asp:Content>

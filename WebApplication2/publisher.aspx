@@ -27,9 +27,16 @@
         }
     </style>
 
-    
-        <div>
-            <table class="auto-style1">
+    <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#publisher">Publisher</a>
+        </h4>
+      </div>
+      <div id="publisher" class="panel-collapse collapse in">
+        <div class="panel-body">
+             <table class="auto-style1">
                 <tr>
                     <td class="auto-style2">
                         Publisher ID</td>
@@ -69,7 +76,7 @@
                         &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Pincode*</td>
+                    <td class="auto-style2">Pincode</td>
                     <td>
                         <asp:TextBox ID="pincode" runat="server" TextMode="Number"></asp:TextBox>
                     </td>
@@ -135,9 +142,9 @@
                         &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">Contact Person</td>
+                    <td class="auto-style3">Agent Name</td>
                     <td class="auto-style4">
-                        <asp:TextBox ID="contactPerson" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="agentname" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -158,7 +165,25 @@
                     </td>
                 </tr>
             </table>
+
         </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#publisherdetails">Publisher Details</a>
+        </h4>
+      </div>
+      <div id="publisherdetails" class="panel-collapse collapse">
+        <div class="panel-body">
+            <asp:GridView ID="GridView1" runat="server">
+            </asp:GridView>
+        </div>
+      </div>
+    </div>
+    
+  </div> 
    
 
     </asp:Content>

@@ -156,4 +156,13 @@ Partial Public Class WebForm3
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents delete As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''GridView1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
 End Class

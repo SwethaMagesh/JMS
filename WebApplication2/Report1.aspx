@@ -2,25 +2,26 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
   
-        <div style="height: 167px">
-            <table style="width: 100%">
+        <div style="height: 117px">
+            <table style="height: 80px;" class="nav-justified">
                 <tr>
-                    <td style="width: 312px">
-                        <br />
+                    <td style="width: 299px" class="modal-sm">
                         Show :&nbsp;
                         <asp:DropDownList ID="List1" runat="server">
                             <asp:ListItem Value="0">Count</asp:ListItem>
                             <asp:ListItem Value="1">List</asp:ListItem>
                         </asp:DropDownList>
                     </td>
-                    <td style="width: 439px">
-                        <br />
-                        Of :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
-                        <asp:DropDownList ID="List2" runat="server" AutoPostBack="True">
+                    <td style="width: 299px" class="modal-sm">
+                        Of :&nbsp;<asp:DropDownList ID="List2" runat="server" AutoPostBack="True">
                             <asp:ListItem Value="0">Publishers</asp:ListItem>
                             <asp:ListItem Value="1">Journals</asp:ListItem>
                             <asp:ListItem Value="2">Subscriptions</asp:ListItem>
                             <asp:ListItem Value="3">Issues</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    <td style="width: 302px">
+                        Group by :&nbsp;<asp:DropDownList ID="Groupby" runat="server" AutoPostBack="True">
                         </asp:DropDownList>
                     </td>
                     <td>
@@ -35,34 +36,94 @@
                         <br />
                     </td>
                 </tr>
-                <tr>
-                    <td style="width: 312px">
-                        &nbsp;</td>
-                    <td style="width: 439px">
-                        &nbsp;Group by :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:DropDownList ID="Groupby" runat="server" AutoPostBack="True">
-                        </asp:DropDownList>
-                    </td>
-                    <td>
-                        &nbsp;</td>
-                </tr>
-                <tr>
-                    <td style="width: 312px">&nbsp;</td>
-                    <td style="width: 439px">
-                        <br />
-                        <br />
-                        <asp:Button ID="obtain" runat="server" Text="OBTAIN" />
-                        <br />
-                        <br />
-                    </td>
-                    <td>
-                        <br />
-                    </td>
-                </tr>
-            </table>
+                </table>
         </div>
-    
-            <asp:GridView ID="GridView1" runat="server" style="width: 187px; height: 127px">
+    <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#Journal">Journals</a>
+        </h4>
+      </div>
+      <div id="Journal" class="panel-collapse collapse in">
+        <div class="panel-body" >
+             <asp:GridView ID="Journals" runat="server">
             </asp:GridView>
-            
+        </div>
+      </div>
+    </div>    
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#Publisher">Publishers</a>
+        </h4>
+      </div>
+      <div id="Publisher" class="panel-collapse collapse">
+        <div class="panel-body">
+             <asp:GridView ID="Publishers" runat="server" >
+            </asp:GridView>
+        </div>
+      </div>
+    </div>
+         
+     <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#JournalPublisher">Journals (based on Publishers)</a>
+        </h4>
+      </div>
+      <div id="JournalPublisher" class="panel-collapse collapse">
+        <div class="panel-body"">
+             <asp:GridView ID="jpubl" runat="server" >
+            </asp:GridView>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#JournalPeriodicity">Journals (based on Periodicity)</a>
+        </h4>
+      </div>
+      <div id="JournalPeriodicity" class="panel-collapse collapse">
+        <div class="panel-body" >
+             <asp:GridView ID="periodicityl" runat="server" >
+            </asp:GridView>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#JournalDept">Journals (based on Departments)</a>
+        </h4>
+      </div>
+      <div id="JournalDept" class="panel-collapse collapse">
+        <div class="panel-body">
+             <asp:GridView ID="jdeptl" runat="server">
+            </asp:GridView>
+        </div>
+      </div>
+    </div>
+     
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#JournalProgram">Journals (based on Programs)</a>
+        </h4>
+      </div>
+      <div id="JournalProgram" class="panel-collapse collapse ">
+        <div class="panel-body">
+            <asp:GridView ID="jprogl" runat="server"  >
+            </asp:GridView>
+        </div>
+      </div>
+    </div>
+
+    </div>     
 </asp:Content>

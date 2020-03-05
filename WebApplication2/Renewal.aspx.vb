@@ -19,7 +19,7 @@ Public Class WebForm4
             Dim dt As New DataTable()
 
             Dim cmdstr As String
-            cmdstr = My.Resources.Renewal
+            cmdstr = "select * from subscription"
             cmd = New MySqlCommand(cmdstr, con)
             da = New MySqlDataAdapter(cmd)
             da.Fill(dt)

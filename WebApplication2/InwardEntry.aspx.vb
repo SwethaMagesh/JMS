@@ -149,7 +149,7 @@ Public Class InwardEntry
                 td = dr(3)
                 FromDateBox.Text = fd.ToString("yyyy-MM-dd")
                 ToDateBox.Text = td.ToString("yyyy-MM-dd")
-                MergeRemarkBox.Text = dr(4)
+                MergeRemarkBox.Text = dr(4).ToString
 
             End If
             dr.Close()
