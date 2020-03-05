@@ -9,11 +9,14 @@ Public Class WebForm2
         If Not Me.IsPostBack Then
             publisher.Items.Add("--Select--")
             con.Open()
-            Dim cmd As New MySqlCommand("select pubName as test from publisher", con)
+            Dim cmd As New MySqlCommand("select pubName as test,pubid from publisher", con)
             Dim dr As MySqlDataReader
             dr = cmd.ExecuteReader()
             While dr.Read()
-                publisher.Items.Add(dr(0).ToString)
+                Dim item As New ListItem()
+                item.Text = dr(0).ToString()
+                item.Value = dr(1).ToString()
+                publisher.Items.Add(item)
             End While
             publisher.DataBind()
             con.Close()
@@ -56,7 +59,7 @@ Public Class WebForm2
         placementNo.Text = ""
         acchead.Text = ""
         issn.Text = ""
-        status.Text = ""
+        status.ClearSelection()
         lang.Text = ""
         fileNo.Text = ""
         url.Text = ""

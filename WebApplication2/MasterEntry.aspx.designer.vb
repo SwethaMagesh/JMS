@@ -92,7 +92,7 @@ Partial Public Class WebForm2
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents status As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents status As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''remark control.

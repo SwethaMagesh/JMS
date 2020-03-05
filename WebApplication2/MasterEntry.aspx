@@ -17,19 +17,11 @@
             }
             
             .auto-style5 {
-                width: 116px;
-            }
-            
-            .auto-style6 {
-                width: 333px;
+                width: 120px;
             }
             
             .auto-style7 {
                 width: 336px;
-            }
-            
-            .auto-style8 {
-                width: 324px;
             }
             
             .auto-style9 {
@@ -42,6 +34,12 @@
             
             .auto-style16 {
                 margin-left: 37px;
+            }
+            .auto-style21 {
+                width: 339px;
+            }
+            .auto-style22 {
+                width: 338px;
             }
         </style>
 
@@ -95,10 +93,10 @@
                             <asp:ListItem>Weekly</asp:ListItem>
                             <asp:ListItem>Fortnightly</asp:ListItem>
                             <asp:ListItem>Monthly</asp:ListItem>
-                            <asp:ListItem>AnnuallyBimonthly</asp:ListItem>
+                            <asp:ListItem>Annually</asp:ListItem>
                             <asp:ListItem>Quarterly</asp:ListItem>
                             <asp:ListItem>Half-yearly</asp:ListItem>
-                            <asp:ListItem></asp:ListItem>
+                            <asp:ListItem>Bimonthly</asp:ListItem>
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -123,7 +121,7 @@
             <p><strong>Type Details</strong></p>
             <table class="nav-justified">
                 <tr>
-                    <td class="auto-style6">
+                    <td class="auto-style22">
                         <span class="auto-style19">Type</span></td>
                     <td>
                         <asp:DropDownList ID="jtype" runat="server" CssClass="auto-style7" Width="350px">
@@ -133,11 +131,11 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style22">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style6">Category</td>
+                    <td class="auto-style22">Category</td>
                     <td>
                         <asp:DropDownList ID="category" runat="server" CssClass="auto-style9" Width="351px">
                             <asp:ListItem>Subscription</asp:ListItem>
@@ -146,11 +144,11 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style22">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style6">Period type</td>
+                    <td class="auto-style22">Period type</td>
                     <td>
                         <asp:DropDownList ID="periodType" runat="server" CssClass="auto-style9" Width="351px">
                             <asp:ListItem>Mid-Year</asp:ListItem>
@@ -159,21 +157,24 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style22">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style6">Status</td>
+                    <td class="auto-style22">Status</td>
                     <td>
-                        <asp:TextBox ID="status" runat="server"></asp:TextBox>
+                        <asp:DropDownList ID="status" runat="server" CssClass="auto-style9" Width="351px">
+                            <asp:ListItem>Available</asp:ListItem>
+                            <asp:ListItem>Expired</asp:ListItem>
+                        </asp:DropDownList>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style22">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style6">Remark</td>
+                    <td class="auto-style22">Remark</td>
                     <td>
                         <asp:TextBox ID="remark" runat="server"></asp:TextBox>
                     </td>
@@ -183,24 +184,24 @@
             <p><strong>Publisher Details</strong></p>
             <table class="nav-justified">
                 <tr>
-                    <td class="auto-style7">Publisher*</td>
+                    <td class="auto-style22">Publisher*</td>
                     <td>
                         <asp:DropDownList ID="publisher" runat="server" DataMember="DefaultView">
                         </asp:DropDownList>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style7">&nbsp;</td>
+                    <td class="auto-style22">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style7">ISSN</td>
+                    <td class="auto-style22">ISSN</td>
                     <td>
                         <asp:TextBox ID="issn" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style7">&nbsp;</td>
+                    <td class="auto-style22">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
             </table>
@@ -208,33 +209,33 @@
             <p><strong>Other Details</strong></p>
             <table class="nav-justified">
                 <tr>
-                    <td class="auto-style9">Language</td>
+                    <td class="auto-style21">Language</td>
                     <td>
                         <asp:TextBox ID="lang" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style9">&nbsp;</td>
+                    <td class="auto-style21">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style9">File No</td>
+                    <td class="auto-style21">File No</td>
                     <td>
                         <asp:TextBox ID="fileNo" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style9">&nbsp;</td>
+                    <td class="auto-style21">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style9">URL of Journal</td>
+                    <td class="auto-style21">URL of Journal</td>
                     <td>
                         <asp:TextBox ID="url" runat="server" TextMode="Url"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style9">&nbsp;</td>
+                    <td class="auto-style21">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
             </table>
@@ -242,32 +243,32 @@
             <p><strong>Subject Details</strong> </p>
             <table class="nav-justified">
                 <tr>
-                    <td class="auto-style8">&nbsp;</td>
+                    <td class="auto-style21">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style8">Subject</td>
+                    <td class="auto-style21">Subject</td>
                     <td>
                         <asp:TextBox ID="subject" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style8">&nbsp;</td>
+                    <td class="auto-style21">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style8">Account Head</td>
+                    <td class="auto-style21">Account Head</td>
                     <td>
                         <asp:TextBox ID="acchead" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style8">&nbsp;</td>
+                    <td class="auto-style21">&nbsp;</td>
                     <td>
                         &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style8"><strong>No. of&nbsp; Programs&nbsp; </strong> </td>
+                    <td class="auto-style21"><strong>No. of&nbsp; Programs&nbsp; </strong> </td>
                     <td>
                         <asp:TextBox ID="progNo" runat="server" TextMode="Number"></asp:TextBox>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -276,19 +277,19 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style8">&nbsp;</td>
+                    <td class="auto-style21">&nbsp;</td>
                     <td>
                         &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style8"><asp:Label ID="Label1" runat="server" Text="Label">Program 1 </asp:Label></td>
+                    <td class="auto-style21"><asp:Label ID="Label1" runat="server" Text="Label">Program 1 </asp:Label></td>
                     <td>
                         <asp:DropDownList ID="prog1" runat="server" CssClass="auto-style16" Width="351px">
                         </asp:DropDownList>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style8"><asp:Label ID="Label2" runat="server" Text="Label">Program 2 </asp:Label></td>
+                    <td class="auto-style21"><asp:Label ID="Label2" runat="server" Text="Label">Program 2 </asp:Label></td>
                     <td>
                         <asp:DropDownList ID="prog2" runat="server" CssClass="auto-style16" Width="351px">
                         </asp:DropDownList>
@@ -296,7 +297,7 @@
                 </tr>
                 <tr>
 
-                    <td class="auto-style8"><asp:Label ID="Label3" runat="server" Text="Label">Program 3 </asp:Label></td>
+                    <td class="auto-style21"><asp:Label ID="Label3" runat="server" Text="Label">Program 3 </asp:Label></td>
                     <td>
                         <asp:DropDownList ID="prog3" runat="server" CssClass="auto-style16" Width="351px">
                         </asp:DropDownList>
@@ -304,32 +305,32 @@
                 </tr>
                 <tr>
 
-                    <td class="auto-style8"><asp:Label ID="Label4" runat="server" Text="Label">Program 4 </asp:Label></td>
+                    <td class="auto-style21"><asp:Label ID="Label4" runat="server" Text="Label">Program 4 </asp:Label></td>
                     <td>
                         <asp:DropDownList ID="prog4" runat="server" CssClass="auto-style16" Width="351px">
                         </asp:DropDownList>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style8"><asp:Label ID="Label5" runat="server" Text="Label">Program 5 </asp:Label></td>
+                    <td class="auto-style21"><asp:Label ID="Label5" runat="server" Text="Label">Program 5 </asp:Label></td>
                     <td>
                         <asp:DropDownList ID="prog5" runat="server" CssClass="auto-style16" Width="351px">
                         </asp:DropDownList>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style8">&nbsp;</td>
+                    <td class="auto-style21">&nbsp;</td>
                     <td>
                         
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style8">&nbsp;</td>
+                    <td class="auto-style21">&nbsp;</td>
                     <td>
                         &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style8"><strong>No. of Department </strong> </td>
+                    <td class="auto-style21"><strong>No. of Department </strong> </td>
                     <td>
                         <asp:TextBox ID=Department runat="server" TextMode="Number"></asp:TextBox>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -338,19 +339,19 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style8">&nbsp;</td>
+                    <td class="auto-style21">&nbsp;</td>
                     <td>
                         &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style8"><asp:Label ID="Label6" runat="server" Text="Label">Department 1 </asp:Label></td>
+                    <td class="auto-style21"><asp:Label ID="Label6" runat="server" Text="Label">Department 1 </asp:Label></td>
                     <td>
                         <asp:DropDownList ID="Department1" runat="server" CssClass="auto-style16" Width="351px">
                         </asp:DropDownList>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style8"><asp:Label ID="Label7" runat="server" Text="Label">Department 2 </asp:Label></td>
+                    <td class="auto-style21"><asp:Label ID="Label7" runat="server" Text="Label">Department 2 </asp:Label></td>
                     <td>
                         <asp:DropDownList ID="Department2" runat="server" CssClass="auto-style16" Width="351px">
                         </asp:DropDownList>
@@ -358,7 +359,7 @@
                 </tr>
                 <tr>
 
-                    <td class="auto-style8"><asp:Label ID="Label8" runat="server" Text="Label">Department 3 </asp:Label></td>
+                    <td class="auto-style21"><asp:Label ID="Label8" runat="server" Text="Label">Department 3 </asp:Label></td>
                     <td>
                         <asp:DropDownList ID="Department3" runat="server" CssClass="auto-style16" Width="351px">
                         </asp:DropDownList>
@@ -366,21 +367,21 @@
                 </tr>
                 <tr>
 
-                    <td class="auto-style8"><asp:Label ID="Label9" runat="server" Text="Label">Department 4 </asp:Label></td>
+                    <td class="auto-style21"><asp:Label ID="Label9" runat="server" Text="Label">Department 4 </asp:Label></td>
                     <td>
                         <asp:DropDownList ID="Department4" runat="server" CssClass="auto-style16" Width="351px">
                         </asp:DropDownList>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style8"><asp:Label ID="Label10" runat="server" Text="Label">Department 5 </asp:Label></td>
+                    <td class="auto-style21"><asp:Label ID="Label10" runat="server" Text="Label">Department 5 </asp:Label></td>
                     <td>
                         <asp:DropDownList ID="Department5" runat="server" CssClass="auto-style16" Width="351px">
                         </asp:DropDownList>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style8">&nbsp;</td>
+                    <td class="auto-style21">&nbsp;</td>
                     <td>
                         &nbsp;</td>
                 </tr>
