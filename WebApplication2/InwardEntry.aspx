@@ -38,6 +38,17 @@
                         &nbsp;</td>
                 </tr>
                 <tr>
+                    <td class="auto-style2">Periodicity</td>
+                    <td>
+                        <asp:TextBox ID="periodicity" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">&nbsp;</td>
+                    <td>
+                        &nbsp;</td>
+                </tr>
+                <tr>
                     <td class="auto-style2">Volume Number*</td>
                     <td>
                         <asp:TextBox ID="VolNoBox" runat="server" TextMode="Number"></asp:TextBox>
@@ -60,7 +71,7 @@
                         &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">From Date</td>
+                    <td class="auto-style2">From Date*</td>
                     <td>
                         <asp:TextBox ID="FromDateBox" runat="server" TextMode="Date"></asp:TextBox>
                     </td>
@@ -71,7 +82,7 @@
                         &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">To Date</td>
+                    <td class="auto-style2">To Date*</td>
                     <td>
                         <asp:TextBox ID="ToDateBox" runat="server" TextMode="Date"></asp:TextBox>
                     </td>
@@ -89,17 +100,28 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
+                    <td>
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">Received Date*</td>
+                    <td>
+                        <asp:TextBox ID="issueDate" runat="server" TextMode="Date"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <asp:Button ID="Button1" runat="server" Text="Save issue" />
+                        <asp:Button ID="saveButton" runat="server" Text="Save issue" />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="Button2" runat="server" Text="Clear contents" />
+                        <asp:Button ID="clear" runat="server" Text="Clear contents" />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="Button3" runat="server" Text="Update and Save" />
+                        <asp:Button ID="updateSave" runat="server" Text="Update and Save" />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="Button4" runat="server" Text="Delete record" />
+                        <asp:Button ID="delete" runat="server" Text="Delete record" />
                     </td>
                 </tr>
             </table>

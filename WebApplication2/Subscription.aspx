@@ -54,9 +54,25 @@
                         &nbsp;</td>
                 </tr>
                 <tr>
+                    <td class="auto-style4">Period</td>
+                    <td class="auto-style3">
+                        <asp:DropDownList ID="period" runat="server">
+                            <asp:ListItem Value="1">6 Months</asp:ListItem>
+                            <asp:ListItem Value="2">1 Year</asp:ListItem>
+                            <asp:ListItem Value="3">2 Years</asp:ListItem>
+                            <asp:ListItem Value="0">None specified</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style4">&nbsp;</td>
+                    <td class="auto-style3">
+                        &nbsp;</td>
+                </tr>
+                <tr>
                     <td class="auto-style4">Subscription Start date*</td>
                     <td class="auto-style3">
-                        <asp:TextBox ID="fromDate" runat="server" TextMode="Date"></asp:TextBox>
+                        <asp:TextBox ID="fromDate" runat="server" TextMode="Date" AutoPostBack="True"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -76,9 +92,9 @@
                         &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style4">Subscribed From</td>
+                    <td class="auto-style4">Vendor Name*</td>
                     <td class="auto-style3">
-                        <asp:DropDownList ID="subscribedFrom" runat="server">
+                        <asp:DropDownList ID="vendor" runat="server">
                         </asp:DropDownList>
                     </td>
                 </tr>
@@ -88,9 +104,9 @@
                         &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style4">Subscribed Date*</td>
+                    <td class="auto-style4">Subscription/ Payment Date*</td>
                     <td class="auto-style3">
-                        <asp:TextBox ID="subscribedOn" runat="server" TextMode="Date"></asp:TextBox>
+                        <asp:TextBox ID="paymentDate" runat="server" TextMode="Date"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -99,7 +115,7 @@
                         &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style4">Payment mode*</td>
+                    <td class="auto-style4">Payment mode</td>
                     <td class="auto-style3">
                         <asp:RadioButtonList ID="ModeRadioButton" runat="server">
                             <asp:ListItem>DD</asp:ListItem>
@@ -113,9 +129,20 @@
                         &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style4">Payment Details (DD or UPSR No)</td>
+                    <td class="auto-style4">Payment Details (DD or UTR No)</td>
                     <td class="auto-style3">
                         <asp:TextBox ID="paymentDetails" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style4">&nbsp;</td>
+                    <td class="auto-style3">
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style4">Amount Paid*</td>
+                    <td class="auto-style3">
+                        <asp:TextBox ID="amt" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -159,15 +186,17 @@
             <table class="nav-justified">
                 <tr>
                     <td class="auto-style5">
-                        <asp:Button ID="Button1" runat="server" Text="Save subscription" style="height: 26px" />
+                        <asp:Button ID="save" runat="server" Text="Save subscription" style="height: 26px" />
                     </td>
                     <td class="auto-style6">
-                        <asp:Button ID="Button2" runat="server" CssClass="auto-style8" Text="Clear contents" Width="120px" />
+                        <asp:Button ID="clear" runat="server" CssClass="auto-style8" Text="Clear contents" Width="120px" />
                     </td>
                     <td class="auto-style7">
-                        <asp:Button ID="Button3" runat="server" Text="Delete record" Width="132px" />
+                        <asp:Button ID="updateSave" runat="server" Text="Update and Save" Width="132px" />
                     </td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:Button ID="delete" runat="server" Text="Delete record" Width="132px" />
+                    </td>
                 </tr>
             </table>
     </p>
