@@ -19,7 +19,7 @@ Public Class WebForm4
             Dim dt As New DataTable()
 
             Dim cmdstr As String
-            cmdstr = "select code as JCode ,title as Title ,date_format(fromDate,'%d %M, %Y') as StartDate, date_format(toDate, '%d %M, %Y') as EndDate from master where todate is not null order by toDate,code"
+            cmdstr = My.Resources.Renewal
             cmd = New MySqlCommand(cmdstr, con)
             da = New MySqlDataAdapter(cmd)
             da.Fill(dt)

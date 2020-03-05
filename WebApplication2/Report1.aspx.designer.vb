@@ -41,6 +41,15 @@ Partial Public Class Report1
     Protected WithEvents List3 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
+    '''Groupby control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Groupby As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
     '''obtain control.
     '''</summary>
     '''<remarks>

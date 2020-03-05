@@ -32,6 +32,15 @@ Partial Public Class InwardEntry
     Protected WithEvents TitleBox As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''periodicity control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents periodicity As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
     '''VolNoBox control.
     '''</summary>
     '''<remarks>
@@ -77,38 +86,47 @@ Partial Public Class InwardEntry
     Protected WithEvents MergeRemarkBox As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Button1 control.
+    '''issueDate control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents issueDate As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Button2 control.
+    '''saveButton control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Button2 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents saveButton As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Button3 control.
+    '''clear control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Button3 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents clear As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Button4 control.
+    '''updateSave control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Button4 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents updateSave As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''delete control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents delete As Global.System.Web.UI.WebControls.Button
 End Class

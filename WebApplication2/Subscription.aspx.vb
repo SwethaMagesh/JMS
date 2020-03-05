@@ -7,18 +7,21 @@ Public Class WebForm3
     Dim cmd1 As New MySqlCommand
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        'subscribedFrom.Items.Clear()
+
         If Not Me.IsPostBack Then
-            subscribedFrom.Items.Add("--Select--")
+            fromDate.Text = Today.ToString("yyyy-MM-dd")
+            paymentDate.Text = Today.ToString("yyyy-MM-dd")
+            vendor.Items.Add("--Select--")
             Try
                 con.Open()
-                Dim cmd As New MySqlCommand("select pubName as test from publisher", con)
+                Dim cmd As New MySqlCommand("select pubName,pubid from publisher", con)
                 Dim dr As MySqlDataReader
                 dr = cmd.ExecuteReader()
                 While dr.Read()
-                    subscribedFrom.Items.Add(dr(0).ToString)
+                    vendor.Items.Add(dr(0).ToString)
+
                 End While
-                subscribedFrom.DataBind()
+                vendor.DataBind()
                 con.Close()
 
             Catch ex As MySql.Data.MySqlClient.MySqlException
@@ -28,24 +31,21 @@ Public Class WebForm3
         End If
     End Sub
 
-    Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        If code.Text = "" Or fromDate.Text = "" Or toDate.Text = "" Then
+    Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles save.Click
+        If code.Text = "" Or fromDate.Text = "" Or toDate.Text = "" Or paymentDate.Text = "" Or vendor.Text = "" Or amt.Text = "" Then
             MsgBox("Fill all mandatory fields", 0, "Attention Required")
         Else
             Try
                 con.Open()
                 Dim commandstr As String
-                commandstr = "insert into subscription (code, fromDate, toDate, subscribedFrom,  remarks, subscribedOn,paymentMode,paymentDetails,voucherRef) values (" & code.Text & ",'" & fromDate.Text & "','" & toDate.Text & "','" & subscribedFrom.SelectedItem.ToString & "','" & remarks.Text & "','" & subscribedOn.Text & "','" & ModeRadioButton.Text & "','" & paymentDetails.Text & "','" & VoucherRef.Text & "')"
+                commandstr = "insert into subscription (jcode, fromDate, toDate, vendorid,  remarks, paymentDate,paymentMode,paymentDetails,voucherRef,amount) values (" & code.Text & ",'" & fromDate.Text & "','" & toDate.Text & "'," & vendor.SelectedValue & ",'" & remarks.Text & "','" & paymentDate.Text & "','" & ModeRadioButton.Text & "','" & paymentDetails.Text & "','" & VoucherRef.Text & "'," & amt.Text & " )"
                 cmd = New MySqlCommand(commandstr, con)
                 cmd.ExecuteNonQuery()
-                commandstr = "update master  set  fromDate='" & fromDate.Text & "', toDate='" & toDate.Text & "', subscribedFrom='" & subscribedFrom.Text & "' where code = " & Val(code.Text)
-                cmd1 = New MySqlCommand(commandstr, con)
-                cmd1.ExecuteNonQuery()
                 MsgBox("Saved successfully", 0, "Saved")
                 con.Close()
                 Button2_Click(Nothing, Nothing)
             Catch ex As MySql.Data.MySqlClient.MySqlException
-               
+
                 If ex.Number = 3819 Then
                     MsgBox("Check the from and to dates provided")
                 Else
@@ -56,6 +56,98 @@ Public Class WebForm3
 
             End Try
         End If
+    End Sub
+
+    Protected Sub updateSave_Click(sender As Object, e As EventArgs) Handles updateSave.Click
+        If code.Text IsNot "" And fromDate.Text IsNot "" And toDate.Text IsNot "" And paymentDate.Text IsNot "" And
+            amt.Text IsNot "" And vendor.Text IsNot "" Then
+
+            Dim ch As Int16
+            ch = MsgBox("Are you sure you want To update this entry?", 3, "Confirm Update")
+            Select Case ch
+                Case vbYes
+                    Try
+                        con.Open()
+                        Dim cmdstr As String
+                        cmdstr = "insert into subscription "
+                        cmd = New MySqlCommand(cmdstr, con)
+                        cmd.ExecuteNonQuery()
+                        con.Close()
+                        MsgBox("Modified successfully")
+                        Button2_Click(Nothing, Nothing)
+
+                    Catch ex As MySqlException
+                        con.Close()
+                        If ex.Number = 3819 Then
+                            MsgBox("Date constraint ")
+                        Else
+                            MsgBox("error" & ex.ToString)
+                        End If
+
+
+                    End Try
+
+
+            End Select
+
+
+        Else
+            MsgBox("Fill mandatory details", 0, "Missing Field")
+        End If
+
+    End Sub
+
+    Protected Sub delete_Click(sender As Object, e As EventArgs) Handles delete.Click
+        If code.Text IsNot "" And fromDate.Text IsNot "" And toDate.Text IsNot "" And paymentDate.Text IsNot "" And
+            amt.Text IsNot "" And vendor.Text IsNot "" Then
+
+            Dim ch As Int16
+            ch = MsgBox("Are you sure you want to delete this entry?", 3, "Confirm Delete")
+            Select Case ch
+                Case vbYes
+                    Try
+                        con.Open()
+                        Dim cmdstr As String
+                        cmdstr = ""
+                        cmd = New MySqlCommand(cmdstr, con)
+                        cmd.ExecuteNonQuery()
+                        con.Close()
+                        MsgBox("Deleted successfully")
+                        Button2_Click(Nothing, Nothing)
+
+                    Catch ex As MySqlException
+                        con.Close()
+
+                        MsgBox("error" & ex.ToString)
+
+
+                    End Try
+
+
+            End Select
+
+
+        Else
+            MsgBox("Fill mandatory fields", 0, "Missing Field")
+        End If
+
+    End Sub
+
+    Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles clear.Click
+        code.Text = ""
+        title.Text = ""
+
+        toDate.Text = ""
+        ModeRadioButton.ClearSelection()
+        vendor.ClearSelection()
+        fromDate.Text = Today.ToString("yyyy-mm-dd")
+        paymentDate.Text = Today.ToString("yyyy-mm-dd")
+        paymentDetails.Text = ""
+        VoucherRef.Text = ""
+        remarks.Text = ""
+        amt.Text = ""
+
+
     End Sub
 
     Protected Sub code_TextChanged(sender As Object, e As EventArgs) Handles code.TextChanged
@@ -71,34 +163,26 @@ Public Class WebForm3
                 title.Text = dr(0).ToString
             End While
             dr.Close()
-            cmdstr = "select subscribedFrom,subscribedOn from subscription where code =" & code.Text & " order by subscribedOn desc limit 1"
-            cmd = New MySqlCommand(cmdstr, con)
-            dr = cmd.ExecuteReader()
-            While dr.Read()
-                ' fromDate.Text = dr(0).ToString
-                ' toDate.Text = dr(1).ToString
-                ' subscribedFrom.text = dr(0).ToString
-
-            End While
             con.Close()
         Catch ex As MySql.Data.MySqlClient.MySqlException
             MsgBox(ex.ToString & "Database error")
         End Try
     End Sub
 
-    Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        code.Text = ""
-        title.Text = ""
-        fromDate.Text = ""
-        toDate.Text = ""
-        ModeRadioButton.ClearSelection()
-        subscribedFrom.ClearSelection()
-        subscribedOn.Text = ""
-        paymentDetails.Text = ""
-        VoucherRef.Text = ""
-        remarks.Text = ""
-        code.Text = Now.ToShortDateString
-        fromDate.Text = Now.ToShortDateString
+    Protected Sub fromDate_TextChanged(sender As Object, e As EventArgs) Handles fromDate.TextChanged
+        Dim fd As Date
+        'needs work
+        Select Case period.SelectedValue
+            Case 0
 
+            Case 1
+                fd.AddMonths(6)
+            Case 2
+                fd.AddYears(1)
+            Case 3
+                fd.AddYears(2)
+        End Select
+        ' toDate.Text = fd.ToString("yyyy-mm-dd")
+        toDate.Text = fromDate.ToString("yyyy-mm-dd")
     End Sub
 End Class
