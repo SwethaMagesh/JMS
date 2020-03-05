@@ -21,14 +21,14 @@ Public Class WebForm2
 
 
 
-    Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles save.Click
         If code.Text = "" Or title.Text = "" Or periodicity.SelectedItem.ToString = "" Or placementNo.Text = "" Or publisher.SelectedItem.ToString = "" Then
             MsgBox("Please fill all required fields", 0, "Attention Required")
         Else
             con1.Open()
             Dim cmd As MySqlCommand
             Dim valuestr As String
-            valuestr = "insert into master (code,title,acqDate,periodicity,remark,placementNo,subject,dept,publisher,issn) values(" & Val(code.Text) & ",'" & title.Text & "','" & acqdate.Text & "','" & periodicity.SelectedItem.ToString & " ','" & remark.Text & "','" & placementNo.Text & "','" & subject.Text & "','" & dept.Text & "','" & publisher.SelectedItem.ToString & "','" & issn.Text & "')"
+            valuestr = "insert into master (code,title,acqDate,periodicity,remark,placementNo,subject,dept,publisher,issn) values(" & Val(code.Text) & ",'" & title.Text & "','" & acqdate.Text & "','" & periodicity.SelectedItem.ToString & " ','" & remark.Text & "','" & placementNo.Text & "','" & subject.Text & "','" & acchead.Text & "','" & publisher.SelectedItem.ToString & "','" & issn.Text & "')"
 
             cmd = New MySqlCommand(valuestr, con1)
             cmd.ExecuteNonQuery()
@@ -45,7 +45,7 @@ Public Class WebForm2
         remark.Text = ""
         placementNo.Text = ""
         subject.Text = ""
-        dept.Text = ""
+        acchead.Text = ""
         publisher.ClearSelection()
         issn.Text = ""
     End Sub

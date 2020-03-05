@@ -18,7 +18,10 @@ Public Class WebForm3
                 Dim dr As MySqlDataReader
                 dr = cmd.ExecuteReader()
                 While dr.Read()
-                    vendor.Items.Add(dr(0).ToString)
+                    Dim item As New ListItem()
+                    item.Text = dr(0).ToString()
+                    item.Value = dr(1).ToString()
+                    vendor.Items.Add(item)
 
                 End While
                 vendor.DataBind()
@@ -69,7 +72,7 @@ Public Class WebForm3
                     Try
                         con.Open()
                         Dim cmdstr As String
-                        cmdstr = "insert into subscription "
+                        cmdstr = "update subscription  set fromdate = '" & fromDate.Text & "',todate='" & toDate.Text & "',paymentmode='" & ModeRadioButton.Text & "', paymentdetails='" & paymentDetails.Text & "' , voucherref='" & VoucherRef.Text & "',vendorid=" & vendor.SelectedValue & ", amount =" & amt.Text & ",remarks ='" & remarks.Text & "' where jcode =" & code.Text & " and paymentdate='" & paymentDate.Text & "'"
                         cmd = New MySqlCommand(cmdstr, con)
                         cmd.ExecuteNonQuery()
                         con.Close()
@@ -108,7 +111,7 @@ Public Class WebForm3
                     Try
                         con.Open()
                         Dim cmdstr As String
-                        cmdstr = ""
+                        cmdstr = "delete from subscription where jcode= " & code.Text & "and paymentdate='" & paymentDate.Text & "'"
                         cmd = New MySqlCommand(cmdstr, con)
                         cmd.ExecuteNonQuery()
                         con.Close()
@@ -156,7 +159,7 @@ Public Class WebForm3
             con.Open()
             Dim cmdstr As String
             Dim dr As MySqlDataReader
-            cmdstr = "select title from master where code =" & Val(code.Text)
+            cmdstr = "select title from master where jcode =" & Val(code.Text)
             cmd = New MySqlCommand(cmdstr, con)
             dr = cmd.ExecuteReader()
             While dr.Read()
@@ -183,6 +186,6 @@ Public Class WebForm3
                 fd.AddYears(2)
         End Select
         ' toDate.Text = fd.ToString("yyyy-mm-dd")
-        toDate.Text = fromDate.ToString("yyyy-mm-dd")
+        'toDate.Text = fromDate.ToString("yyyy-mm-dd")
     End Sub
 End Class
