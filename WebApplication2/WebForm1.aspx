@@ -108,10 +108,13 @@
         &nbsp;
                     <br />
                     <span class="auto-style19">Category</span><asp:DropDownList ID="DropDownList1" runat="server" CssClass="auto-style9" Width="351px">
+                        <asp:ListItem>Subscription</asp:ListItem>
+                        <asp:ListItem>Gift</asp:ListItem>
                     </asp:DropDownList>
                     <br />
                     <span class="auto-style19">Type</span><asp:DropDownList ID="DropDownList2" runat="server" CssClass="auto-style7" Width="350px">
-                        <asp:ListItem>INDIA</asp:ListItem>
+                        <asp:ListItem>National</asp:ListItem>
+                        <asp:ListItem>International</asp:ListItem>
                     </asp:DropDownList>
                     <br />
                     <span class="auto-style19">SubTitle</span>&nbsp; <asp:TextBox ID="TextBox9" runat="server" Width="341px"></asp:TextBox>
@@ -154,8 +157,8 @@
                     <br />
                     <br />
                     Period Type&nbsp;
-                    <asp:RadioButton ID="RadioButton1" runat="server" Text="Mid - Year" />
-                    <asp:RadioButton ID="RadioButton2" runat="server" Text="Annual" />
+                    <asp:RadioButton ID="midyr" runat="server" Text="Mid-Year" />
+                    <asp:RadioButton ID="annual" runat="server" Text="Annual" />
                 </td>
                 <td class="auto-style21">
                     <br />
@@ -172,7 +175,7 @@
             </table>
         <p class="auto-style4">
                     <asp:Button ID="Save" runat="server" Text="Save" Height="30px" Width="118px" CssClass="auto-style5" />
-                    <asp:Button ID="Button5" runat="server" Text="Delete" Height="29px" Width="119px" />
+                    <asp:Button ID="delete" runat="server" Text="Delete" Height="29px" Width="119px" />
                     <asp:Button ID="Button6" runat="server" Text="Clear " Height="29px" Width="118px" />
                     <asp:Button ID="Button7" runat="server" Text="Exit" Height="29px" Width="118px" />
         </p>

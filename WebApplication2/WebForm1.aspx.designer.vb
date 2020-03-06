@@ -185,22 +185,22 @@ Partial Public Class webform1
     Protected WithEvents DropDownList7 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''RadioButton1 control.
+    '''midyr control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents RadioButton1 As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents midyr As Global.System.Web.UI.WebControls.RadioButton
 
     '''<summary>
-    '''RadioButton2 control.
+    '''annual control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents RadioButton2 As Global.System.Web.UI.WebControls.RadioButton
+    Protected WithEvents annual As Global.System.Web.UI.WebControls.RadioButton
 
     '''<summary>
     '''DropDownList9 control.
@@ -239,13 +239,13 @@ Partial Public Class webform1
     Protected WithEvents Save As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Button5 control.
+    '''delete control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Button5 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents delete As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Button6 control.

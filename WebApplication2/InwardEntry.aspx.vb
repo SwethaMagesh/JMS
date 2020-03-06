@@ -149,12 +149,14 @@ Public Class InwardEntry
                 td = dr(3)
                 FromDateBox.Text = fd.ToString("yyyy-MM-dd")
                 ToDateBox.Text = td.ToString("yyyy-MM-dd")
-                MergeRemarkBox.Text = dr(4).ToString
 
+                If Not IsDBNull(dr(4)) Then
+                    MergeRemarkBox.Text = dr(4)
+                End If
             End If
-            dr.Close()
+                dr.Close()
 
-            command = "select title ,periodicity from master where code =" & codeBox.Text
+            command = "select title ,periodicity from master where jcode =" & codeBox.Text
             cmd = New MySqlCommand(command, con)
             dr = cmd.ExecuteReader()
             If dr.Read() Then
