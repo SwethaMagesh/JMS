@@ -11,8 +11,8 @@ Public Class Report1
         JournalDeptTable()
         JournalPeridocityTable()
         JournalProgramTable()
-
-
+        VolumeIssuesTable()
+        SubscriptionsTable()
     End Sub
 
     Function JournalTable()
@@ -134,23 +134,104 @@ Public Class Report1
         End Try
     End Function
 
+    Function VolumeIssuesTable()
+        Try
+            con.Open()
+            Dim da As MySqlDataAdapter
+            Dim dt As New DataTable()
+            Dim cmd As New MySqlCommand
+            Dim cmdstr As String
+            cmdstr = "Select * from issuesl"
+            cmd = New MySqlCommand(cmdstr, con)
+            da = New MySqlDataAdapter(cmd)
+            da.Fill(dt)
+            issuesl.DataSource = dt
+            issuesl.DataBind()
+            con.Close()
+            MergeRows(issuesl)
+        Catch ex As Exception
+            MsgBox("Error" & ex.ToString)
+        End Try
+    End Function
+
+    Function SubscriptionsTable()
+        Subdiscontinued()
+        Subapproaching()
+        SubAvailable()
+    End Function
+
+    Function Subdiscontinued()
+        Try
+            con.Open()
+            Dim da As MySqlDataAdapter
+            Dim dt As New DataTable()
+            Dim cmd As New MySqlCommand
+            Dim cmdstr As String
+            cmdstr = My.Resources.Subscription & "dis"
+            cmd = New MySqlCommand(cmdstr, con)
+            da = New MySqlDataAdapter(cmd)
+            da.Fill(dt)
+            subdis.DataSource = dt
+            subdis.DataBind()
+            con.Close()
+        Catch ex As Exception
+            MsgBox("Error" & ex.ToString)
+        End Try
+    End Function
+
+    Function Subapproaching()
+        Try
+            con.Open()
+            Dim da As MySqlDataAdapter
+            Dim dt As New DataTable()
+            Dim cmd As New MySqlCommand
+            Dim cmdstr As String
+            cmdstr = My.Resources.Subscription & "app"
+            cmd = New MySqlCommand(cmdstr, con)
+            da = New MySqlDataAdapter(cmd)
+            da.Fill(dt)
+            subapp.DataSource = dt
+            subapp.DataBind()
+            con.Close()
+        Catch ex As Exception
+            MsgBox("Error" & ex.ToString)
+        End Try
+    End Function
+
+    Function SubAvailable()
+        Try
+            con.Open()
+            Dim da As MySqlDataAdapter
+            Dim dt As New DataTable()
+            Dim cmd As New MySqlCommand
+            Dim cmdstr As String
+            cmdstr = My.Resources.Subscription & "avl"
+            cmd = New MySqlCommand(cmdstr, con)
+            da = New MySqlDataAdapter(cmd)
+            da.Fill(dt)
+            subavl.DataSource = dt
+            subavl.DataBind()
+            con.Close()
+        Catch ex As Exception
+            MsgBox("Error" & ex.ToString)
+        End Try
+    End Function
 
     Public Function MergeRows(GridView1 As GridView)
         For i As Integer = GridView1.Rows.Count - 1 To 1 Step -1
             Dim row As GridViewRow = GridView1.Rows(i)
             Dim previousRow As GridViewRow = GridView1.Rows(i - 1)
-            For j As Integer = 0 To row.Cells.Count - 1
-                If row.Cells(j).Text = previousRow.Cells(j).Text Then
-                    If previousRow.Cells(j).RowSpan = 0 Then
-                        If row.Cells(j).RowSpan = 0 Then
-                            previousRow.Cells(j).RowSpan += 2
-                        Else
-                            previousRow.Cells(j).RowSpan = row.Cells(j).RowSpan + 1
-                        End If
-                        row.Cells(j).Visible = False
+            Dim j As Integer = 0
+            If row.Cells(j).Text = previousRow.Cells(j).Text Then
+                If previousRow.Cells(j).RowSpan = 0 Then
+                    If row.Cells(j).RowSpan = 0 Then
+                        previousRow.Cells(j).RowSpan += 2
+                    Else
+                        previousRow.Cells(j).RowSpan = row.Cells(j).RowSpan + 1
                     End If
+                    row.Cells(j).Visible = False
                 End If
-            Next
+            End If
         Next
     End Function
 

@@ -43,9 +43,16 @@
             }
         </style>
 
-        <div>
-            <p><b>&nbsp;Mandatory Details&nbsp;</b></p>
-            <table class="auto-style1">
+        <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#Mandatory">Mandatory Details</a>
+        </h4>
+      </div>
+      <div id="Mandatory" class="panel-collapse collapse in ">
+        <div class="panel-body">
+             <table class="auto-style1">
                 <tr>
                     <td class="auto-style5">&nbsp;</td>
                     <td class="auto-style3">
@@ -118,8 +125,20 @@
                 </tr>
 
             </table>
-            <p><strong>Type Details</strong></p>
-            <table class="nav-justified">
+        </div>
+      </div>
+    </div>
+        
+
+     <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#TypeDetails">Type Details</a>
+        </h4>
+      </div>
+      <div id="TypeDetails" class="panel-collapse collapse ">
+        <div class="panel-body">
+             <table class="nav-justified">
                 <tr>
                     <td class="auto-style22">
                         <span class="auto-style19">Type</span></td>
@@ -180,9 +199,19 @@
                     </td>
                 </tr>
             </table>
-
-            <p><strong>Publisher Details</strong></p>
-            <table class="nav-justified">
+        </div>
+      </div>
+    </div>
+   
+<div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#PubDet">Publisher Details</a>
+        </h4>
+      </div>
+      <div id="PubDet" class="panel-collapse collapse">
+        <div class="panel-body" >
+              <table class="nav-justified">
                 <tr>
                     <td class="auto-style22">Publisher*</td>
                     <td>
@@ -206,7 +235,19 @@
                 </tr>
             </table>
 
-            <p><strong>Other Details</strong></p>
+        </div>
+      </div>
+    </div>
+
+<div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#OtherDet">Other Details</a>
+        </h4>
+      </div>
+      <div id="OtherDet" class="panel-collapse collapse">
+        <div class="panel-body" >
+             
             <table class="nav-justified">
                 <tr>
                     <td class="auto-style21">Language</td>
@@ -239,9 +280,19 @@
                     <td>&nbsp;</td>
                 </tr>
             </table>
-
-            <p><strong>Subject Details</strong> </p>
-            <table class="nav-justified">
+        </div>
+      </div>
+    </div>         
+            
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#SubDet">Subject Details</a>
+        </h4>
+      </div>
+      <div id="SubDet" class="panel-collapse collapse">
+        <div class="panel-body" >
+             <table class="nav-justified">
                 <tr>
                     <td class="auto-style21">&nbsp;</td>
                     <td>&nbsp;</td>
@@ -386,8 +437,12 @@
                         &nbsp;</td>
                 </tr>
             </table>
-            <p>
-                &nbsp;</p>
+        </div>
+      </div>
+    </div>
+           
+            
+
 
         </div>
         <p>

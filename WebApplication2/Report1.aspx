@@ -38,6 +38,8 @@
                 </tr>
                 </table>
         </div>
+
+
     <div class="panel-group" id="accordion">
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -121,6 +123,45 @@
         <div class="panel-body">
             <asp:GridView ID="jprogl" runat="server"  >
             </asp:GridView>
+        </div>
+      </div>
+    </div>
+        
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#VolumesIssues">Volumes and Issues</a>
+        </h4>
+      </div>
+      <div id="VolumesIssues" class="panel-collapse collapse ">
+        <div class="panel-body">
+            <asp:GridView ID="issuesl" runat="server"  >
+            </asp:GridView>
+        </div>
+      </div>
+    </div>
+
+        
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#Subscription">Subscriptions</a>
+        </h4>
+      </div>
+      <div id="Subscription" class="panel-collapse collapse ">
+        <div class="panel-body">
+            <h4>Expired Subscriptions</h4>
+            <asp:GridView ID="subdis" runat="server"  >
+            </asp:GridView>
+            <br/>
+            <h4>Subscriptions about to Expire</h4>
+            <asp:GridView ID="subapp" runat="server"  >
+            </asp:GridView>
+            <br/>
+            <h4>Subscriptions</h4>
+            <asp:GridView ID="subavl" runat="server"  >
+            </asp:GridView>
+            <br/>
         </div>
       </div>
     </div>

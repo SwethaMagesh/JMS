@@ -102,4 +102,40 @@ Partial Public Class Report1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents jprogl As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''issuesl control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents issuesl As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''subdis control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents subdis As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''subapp control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents subapp As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''subavl control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents subavl As Global.System.Web.UI.WebControls.GridView
 End Class

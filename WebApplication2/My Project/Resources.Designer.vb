@@ -68,5 +68,15 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Renewal", resourceCulture)
             End Get
         End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to SELECT `Journal Code`,`Journal Title`,date_format(fromdate,&apos;%d-%m-%Y&apos;) as FromDate, date_format(todate,&apos;%d-%m-%Y&apos;) as ToDate 
+        '''From sub.
+        '''</summary>
+        Friend ReadOnly Property Subscription() As String
+            Get
+                Return ResourceManager.GetString("Subscription", resourceCulture)
+            End Get
+        End Property
     End Module
 End Namespace

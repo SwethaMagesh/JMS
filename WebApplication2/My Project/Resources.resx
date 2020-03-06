@@ -120,4 +120,8 @@
   <data name="Renewal" xml:space="preserve">
     <value>select * from </value>
   </data>
+  <data name="Subscription" xml:space="preserve">
+    <value>SELECT `Journal Code`,`Journal Title`,date_format(fromdate,'%d-%m-%Y') as FromDate, date_format(todate,'%d-%m-%Y') as ToDate 
+From sub</value>
+  </data>
 </root>
