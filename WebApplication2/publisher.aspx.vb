@@ -30,6 +30,8 @@ Public Class publisher
             MsgBox(other.ToString)
         End Try
         con.Close()
+        PublisherTable()
+
         If Not Me.IsPostBack Then
             pubId.Text = newid
         End If
@@ -37,8 +39,28 @@ Public Class publisher
 
     End Sub
 
+    Function PublisherTable()
+        Try
+            con.Open()
+            Dim da As MySqlDataAdapter
+            Dim dt As New DataTable()
+            Dim cmd As New MySqlCommand
+            Dim cmdstr As String
+            cmdstr = "select pubid as 'Publisher ID',pubname as 'Publisher Name',Address,Pincode,Phone,Email,Website,Country,Fax,agentname as 'Agent Name' from publisher"
+            cmd = New MySqlCommand(cmdstr, con)
+            da = New MySqlDataAdapter(cmd)
+            da.Fill(dt)
+            GridView1.DataSource = dt
+            GridView1.DataBind()
+            con.Close()
+
+        Catch ex As Exception
+            MsgBox("Error" & ex.ToString)
+        End Try
+    End Function
+
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Save.Click
-        If pubName.Text = "" Or address.Text = "" Or pincode.Text = "" Then
+        If pubName.Text = "" Then
             MsgBox("Please fill the mandatory fields", 0, "Attention Required")
         Else
 
@@ -46,7 +68,7 @@ Public Class publisher
                 con.Open()
                 Dim cmd As MySqlCommand
                 Dim valuestr As String
-                valuestr = "insert into publisher(pubid,pubName,address,pincode,country,email,phone,fax,website,contactPerson) values(" & pubId.Text & ",'" & pubName.Text & "','" & address.Text & "'," & Val(pincode.Text) & ",'" & country.Text & "','" & email.Text & "','" & phone.Text & "'," & Val(fax.Text) & ",'" & website.Text & "','" & contactPerson.Text & "')"
+                valuestr = "insert into publisher(pubid,pubName,address,pincode,country,email,phone,fax,website,agentname) values(" & pubId.Text & ",'" & pubName.Text & "','" & address.Text & "'," & Val(pincode.Text) & ",'" & country.Text & "','" & email.Text & "','" & phone.Text & "'," & Val(fax.Text) & ",'" & website.Text & "','" & agentname.Text & "')"
                 cmd = New MySqlCommand(valuestr, con)
                 cmd.ExecuteNonQuery()
                 MsgBox("Saved successfully")
@@ -74,9 +96,9 @@ Public Class publisher
         website.Text = ""
         country.Text = ""
         fax.Text = ""
-        contactPerson.Text = ""
+        agentname.Text = ""
         pubId.Text = newid
-
+        PublisherTable()
     End Sub
 
     Protected Sub pubId_TextChanged(sender As Object, e As EventArgs) Handles pubId.TextChanged
@@ -93,7 +115,7 @@ Public Class publisher
                 website.Text = ""
                 country.Text = ""
                 fax.Text = ""
-                contactPerson.Text = ""
+                agentname.Text = ""
                 Save.Enabled = True
                 Save.Visible = True
                 update.Enabled = False
@@ -112,7 +134,7 @@ Public Class publisher
                     con.Open()
                     Dim cmd As New MySqlCommand
                     Dim cmdstr As String
-                    cmdstr = "select pubname , address,pincode,phone,email,website,country,fax,contactPerson from publisher where pubid = " & pubId.Text
+                    cmdstr = "select pubname,address,pincode,phone,email,website,country,fax,agentname from publisher where pubid = " & pubId.Text
                     cmd = New MySqlCommand(cmdstr, con)
                     Dim dr As MySqlDataReader
                     dr = cmd.ExecuteReader()
@@ -124,18 +146,18 @@ Public Class publisher
                     website.Text = ""
                     country.Text = ""
                     fax.Text = ""
-                    contactPerson.Text = ""
+                    agentname.Text = ""
                     If dr.Read() Then
 
-                        pubName.Text = dr(0)
-                        address.Text = dr(1)
-                        pincode.Text = dr(2)
-                        phone.Text = dr(3)
-                        email.Text = dr(4)
-                        website.Text = dr(5)
-                        country.Text = dr(6)
-                        fax.Text = dr(7)
-                        contactPerson.Text = dr(8)
+                        pubName.Text = dr(0).ToString
+                        address.Text = dr(1).ToString
+                        pincode.Text = dr(2).ToString
+                        phone.Text = dr(3).ToString
+                        email.Text = dr(4).ToString
+                        website.Text = dr(5).ToString
+                        country.Text = dr(6).ToString
+                        fax.Text = dr(7).ToString
+                        agentname.Text = dr(8).ToString
                     Else
                         MsgBox("No such publisher with given id")
                         Save.Enabled = True
@@ -211,7 +233,7 @@ Public Class publisher
                     con.Open()
                     Dim cmd As MySqlCommand
                     Dim cmdstr As String
-                    cmdstr = "update publisher set pubname='" & pubName.Text & "',address='" & address.Text & "',pincode=" & pincode.Text & ",country='" & country.Text & "',email='" & email.Text & "',phone= '" & phone.Text & "',fax= " & fax.Text & ",website='" & website.Text & "',contactPerson='" & contactPerson.Text & "'  where pubid=" & pubId.Text
+                    cmdstr = "update publisher set pubname='" & pubName.Text & "',address='" & address.Text & "',pincode=" & pincode.Text & ",country='" & country.Text & "',email='" & email.Text & "',phone= '" & phone.Text & "',fax= " & fax.Text & ",website='" & website.Text & "',agentname='" & agentname.Text & "'  where pubid=" & pubId.Text
                     cmd = New MySqlCommand(cmdstr, con)
                     cmd.ExecuteNonQuery()
 

@@ -30,6 +30,7 @@ Public Class WebForm3
             Catch ex As MySql.Data.MySqlClient.MySqlException
                 MsgBox("Error " & ex.ToString)
             End Try
+            SubscriptionTable()
 
         End If
     End Sub
@@ -86,14 +87,8 @@ Public Class WebForm3
                         Else
                             MsgBox("error" & ex.ToString)
                         End If
-
-
                     End Try
-
-
             End Select
-
-
         Else
             MsgBox("Fill mandatory details", 0, "Missing Field")
         End If
@@ -139,7 +134,6 @@ Public Class WebForm3
     Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles clear.Click
         code.Text = ""
         title.Text = ""
-
         toDate.Text = ""
         ModeRadioButton.ClearSelection()
         vendor.ClearSelection()
@@ -149,9 +143,28 @@ Public Class WebForm3
         VoucherRef.Text = ""
         remarks.Text = ""
         amt.Text = ""
-
-
+        SubscriptionTable()
     End Sub
+
+    Function SubscriptionTable()
+        Try
+            con.Open()
+            Dim da As MySqlDataAdapter
+            Dim dt As New DataTable()
+            Dim cmd As New MySqlCommand
+            Dim cmdstr As String
+            cmdstr = "select jcode as 'Journal Code',title as 'Title',date_format(fromDate,'%d-%m-%Y') as FromDate,date_format(toDate,'%d-%m-%Y') as ToDate,PaymentMode,PaymentDetails,VendorID,pubname as 'Vendor Name',Amount,date_format(paymentDate,'%d-%m-%Y') as PaymentDate,Remarks from subscription natural join master inner join publisher where publisher.pubid = subscription.vendorid"
+            cmd = New MySqlCommand(cmdstr, con)
+            da = New MySqlDataAdapter(cmd)
+            da.Fill(dt)
+            GridView1.DataSource = dt
+            GridView1.DataBind()
+            con.Close()
+
+        Catch ex As Exception
+            MsgBox("Error" & ex.ToString)
+        End Try
+    End Function
 
     Protected Sub code_TextChanged(sender As Object, e As EventArgs) Handles code.TextChanged
 

@@ -32,15 +32,6 @@ Partial Public Class Report1
     Protected WithEvents List2 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''List3 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents List3 As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
     '''Groupby control.
     '''</summary>
     '''<remarks>
@@ -50,20 +41,65 @@ Partial Public Class Report1
     Protected WithEvents Groupby As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''obtain control.
+    '''List3 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents obtain As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents List3 As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''GridView1 control.
+    '''Journals control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents Journals As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''Publishers control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Publishers As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''jpubl control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents jpubl As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''periodicityl control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents periodicityl As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''jdeptl control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents jdeptl As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''jprogl control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents jprogl As Global.System.Web.UI.WebControls.GridView
 End Class

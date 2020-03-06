@@ -149,6 +149,7 @@ Public Class InwardEntry
                 td = dr(3)
                 FromDateBox.Text = fd.ToString("yyyy-MM-dd")
                 ToDateBox.Text = td.ToString("yyyy-MM-dd")
+
                 If Not IsDBNull(dr(4)) Then
                     MergeRemarkBox.Text = dr(4)
                 End If

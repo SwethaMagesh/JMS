@@ -17,10 +17,7 @@ Public Class WebForm4
             con.Open()
             Dim da As MySqlDataAdapter
             Dim dt As New DataTable()
-
             Dim cmdstr As String
-
-
             cmdstr = My.Resources.Renewal
             cmd = New MySqlCommand(cmdstr, con)
             da = New MySqlDataAdapter(cmd)
