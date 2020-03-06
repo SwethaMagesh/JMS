@@ -117,11 +117,7 @@ Public Class WebForm3
                         con.Close()
 
                         MsgBox("error" & ex.ToString)
-
-
                     End Try
-
-
             End Select
 
 

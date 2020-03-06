@@ -9,16 +9,53 @@
     }
     </style>
 
-         <h2><%: Title %>.</h2>
+         <h2><%: Title %></h2>
 
-        <div class ="center_button">
-             <asp:Button ID="Button2" runat="server" Text="Load Renewals Approaching" style="height: 26px" />
-              <br />
-              <br />
-        </div>
         <div class="center_button">
-            <asp:GridView ID="GridView1" runat="server">
+        </div>
+   <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#SubscriptionExpired">Expired Subscriptions</a>
+        </h4>
+      </div>
+      <div id="SubscriptionExpired" class="panel-collapse collapse ">
+        <div class="panel-body">
+            <asp:GridView ID="subdis" runat="server"  >
+            </asp:GridView>
+            
+            <br/>
+        </div>
+      </div>
+    </div>
+   
+
+<div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#SubscriptionApp">Subscriptions about to Expire</a>
+        </h4>
+      </div>
+      <div id="SubscriptionApp" class="panel-collapse collapse ">
+        <div class="panel-body">
+             <asp:GridView ID="subapp" runat="server"  >
             </asp:GridView>
         </div>
-   
-    </asp:Content>
+      </div>
+    </div>
+
+<div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#Subscription">Subscriptions</a>
+        </h4>
+      </div>
+      <div id="Subscription" class="panel-collapse collapse ">
+        <div class="panel-body">
+            <asp:GridView ID="subavl" runat="server"  >
+            </asp:GridView>
+        </div>
+      </div>
+    </div>
+
+     </asp:Content>
