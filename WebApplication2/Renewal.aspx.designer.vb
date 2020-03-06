@@ -14,20 +14,29 @@ Option Explicit On
 Partial Public Class WebForm4
 
     '''<summary>
-    '''Button2 control.
+    '''subdis control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Button2 As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents subdis As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
-    '''GridView1 control.
+    '''subapp control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents subapp As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''subavl control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents subavl As Global.System.Web.UI.WebControls.GridView
 End Class
