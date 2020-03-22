@@ -19,7 +19,7 @@
           <a data-toggle="collapse" data-parent="#accordion" href="#SubscriptionExpired">Expired Subscriptions</a>
         </h4>
       </div>
-      <div id="SubscriptionExpired" class="panel-collapse collapse ">
+      <div id="SubscriptionExpired" class="panel-collapse collapse in">
         <div class="panel-body">
             <asp:GridView ID="subdis" runat="server"  >
             </asp:GridView>

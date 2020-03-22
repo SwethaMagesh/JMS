@@ -1,5 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
-Public Class WebForm3
+Public Class Subscription
     Inherits System.Web.UI.Page
     Dim constr As String = ConfigurationManager.ConnectionStrings("jmsConnectionString2").ConnectionString
     Dim con As New MySqlConnection(constr)
@@ -129,7 +129,7 @@ Public Class WebForm3
 
     Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles clear.Click
         code.Text = ""
-        title.Text = ""
+        jtitle.Text = ""
         toDate.Text = ""
         ModeRadioButton.ClearSelection()
         vendor.ClearSelection()
@@ -172,7 +172,7 @@ Public Class WebForm3
             cmd = New MySqlCommand(cmdstr, con)
             dr = cmd.ExecuteReader()
             While dr.Read()
-                title.Text = dr(0).ToString
+                jtitle.Text = dr(0).ToString
             End While
             dr.Close()
             con.Close()

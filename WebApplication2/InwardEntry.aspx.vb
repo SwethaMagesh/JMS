@@ -9,9 +9,31 @@ Public Class InwardEntry
         If Not Me.IsPostBack Then
             FromDateBox.Text = DateTime.Today.ToString("yyyy-MM-dd")
             issueDate.Text = Today.ToString("yyyy-MM-dd")
+            VolumeIssuesTable()
+            MissingIssue()
         End If
     End Sub
 
+
+    Function MissingIssue()
+        Try
+            con.Open()
+            Dim da As MySqlDataAdapter
+            Dim dt As New DataTable()
+            Dim cmd As New MySqlCommand
+            Dim cmdstr As String
+            cmdstr = "Select * from missue"
+            cmd = New MySqlCommand(cmdstr, con)
+            da = New MySqlDataAdapter(cmd)
+            da.Fill(dt)
+            missue.DataSource = dt
+            missue.DataBind()
+            con.Close()
+        Catch ex As Exception
+            MsgBox("Error" & ex.ToString)
+        End Try
+
+    End Function
     Protected Sub saveButton_Click(sender As Object, e As EventArgs) Handles saveButton.Click
         If codeBox.Text IsNot "" And VolNoBox.Text IsNot "" And IssueNoBox.Text IsNot "" And FromDateBox.Text IsNot "" And ToDateBox.Text IsNot "" And
             issueDate.Text IsNot "" Then
@@ -117,6 +139,43 @@ Public Class InwardEntry
 
     End Sub
 
+    Function VolumeIssuesTable()
+        Try
+            con.Open()
+            Dim da As MySqlDataAdapter
+            Dim dt As New DataTable()
+            Dim cmd As New MySqlCommand
+            Dim cmdstr As String
+            cmdstr = "Select * from issuesl"
+            cmd = New MySqlCommand(cmdstr, con)
+            da = New MySqlDataAdapter(cmd)
+            da.Fill(dt)
+            issuesl.DataSource = dt
+            issuesl.DataBind()
+            con.Close()
+            MergeRows(issuesl)
+        Catch ex As Exception
+            MsgBox("Error" & ex.ToString)
+        End Try
+    End Function
+
+    Public Function MergeRows(GridView1 As GridView)
+        For i As Integer = GridView1.Rows.Count - 1 To 1 Step -1
+            Dim row As GridViewRow = GridView1.Rows(i)
+            Dim previousRow As GridViewRow = GridView1.Rows(i - 1)
+            Dim j As Integer = 0
+            If row.Cells(j).Text = previousRow.Cells(j).Text Then
+                If previousRow.Cells(j).RowSpan = 0 Then
+                    If row.Cells(j).RowSpan = 0 Then
+                        previousRow.Cells(j).RowSpan += 2
+                    Else
+                        previousRow.Cells(j).RowSpan = row.Cells(j).RowSpan + 1
+                    End If
+                    row.Cells(j).Visible = False
+                End If
+            End If
+        Next
+    End Function
 
     Protected Sub clear_Click(sender As Object, e As EventArgs) Handles clear.Click
         codeBox.Text = ""
