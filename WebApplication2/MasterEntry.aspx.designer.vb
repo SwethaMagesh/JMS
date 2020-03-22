@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class WebForm2
+Partial Public Class MasterEntry
 
     '''<summary>
     '''code control.
@@ -23,13 +23,13 @@ Partial Public Class WebForm2
     Protected WithEvents code As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''title control.
+    '''jtitle control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents title As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents jtitle As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''acqdate control.

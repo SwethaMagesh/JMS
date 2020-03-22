@@ -129,4 +129,22 @@ Partial Public Class InwardEntry
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents delete As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''issuesl control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents issuesl As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''missue control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents missue As Global.System.Web.UI.WebControls.GridView
 End Class

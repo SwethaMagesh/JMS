@@ -13,9 +13,17 @@
         }
     </style>
 
+<div class="panel-group" id="accordion">
 
-        <div>
-            <table class="auto-style1">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#InwardEntry">Inward Entry</a>
+        </h4>
+      </div>
+      <div id="InwardEntry" class="panel-collapse collapse in">
+        <div class="panel-body" >
+             <table class="auto-style1">
                 <tr>
                     <td class="auto-style2">JCode*</td>
                     <td>
@@ -126,4 +134,37 @@
                 </tr>
             </table>
         </div>
+      </div>
+    </div>   
+
+    
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#VolumesandIssues">Volumes and Issues</a>
+        </h4>
+      </div>
+      <div id="VolumesandIssues" class="panel-collapse collapse">
+        <div class="panel-body" >
+             <asp:GridView ID="issuesl" runat="server">
+            </asp:GridView>
+        </div>
+      </div>
+    </div>   
+
+                 <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#MissingIssues">Missing Issues</a>
+        </h4>
+      </div>
+      <div id="MissingIssues" class="panel-collapse collapse">
+        <div class="panel-body" >
+             <asp:GridView ID="missue" runat="server">
+            </asp:GridView>
+        </div>
+      </div>
+    </div>   
+    </div>
+
      </asp:Content>

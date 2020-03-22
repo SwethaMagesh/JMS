@@ -1,6 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 
-Public Class WebForm2
+Public Class MasterEntry
     Inherits System.Web.UI.Page
     Dim constr As String = ConfigurationManager.ConnectionStrings("jmsConnectionString2").ConnectionString
     Dim con As New MySqlConnection(constr)
@@ -32,7 +32,7 @@ Public Class WebForm2
             Try
                 con.Open()
                 Dim cmdstr As String
-                cmdstr = "insert into master (jcode,title, acqdate,remark,placementno,acchead,issn,status,lang,fileno,url,subject,pubid,jtype,category,periodType,periodicity) values ( " & code.Text & " , '" & title.Text & "', '" & acqdate.Text & "', '" & remark.Text & "', '" & placementNo.Text & "', '" & acchead.Text & "', '" & issn.Text & "', '" & status.Text & "', '" & lang.Text & "', '" & fileNo.Text & "', '" & url.Text & "', '" & subject.Text & "',  " & publisher.SelectedValue & " , '" & jtype.SelectedValue & "', '" & category.SelectedValue & "', '" & periodType.SelectedValue & "','" & periodicity.SelectedValue & "' )"
+                cmdstr = "insert into master (jcode,title, acqdate,remark,placementno,acchead,issn,status,lang,fileno,url,subject,pubid,jtype,category,periodType,periodicity) values ( " & code.Text & " , '" & jtitle.Text & "', '" & acqdate.Text & "', '" & remark.Text & "', '" & placementNo.Text & "', '" & acchead.Text & "', '" & issn.Text & "', '" & status.Text & "', '" & lang.Text & "', '" & fileNo.Text & "', '" & url.Text & "', '" & subject.Text & "',  " & publisher.SelectedValue & " , '" & jtype.SelectedValue & "', '" & category.SelectedValue & "', '" & periodType.SelectedValue & "','" & periodicity.SelectedValue & "' )"
                 cmd = New MySqlCommand(cmdstr, con)
                 cmd.ExecuteNonQuery()
                 con.Close()
@@ -53,7 +53,7 @@ Public Class WebForm2
 
     Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles clearContents.Click
         code.Text = ""
-        title.Text = ""
+        jtitle.Text = ""
         acqdate.Text = ""
         remark.Text = ""
         placementNo.Text = ""
@@ -84,7 +84,7 @@ Public Class WebForm2
                     Try
                         con.Open()
                         Dim cmdstr As String
-                        cmdstr = "Update master set title='" & title.Text & "', acqdate ='" & acqdate.Text & "', remark ='" & remark.Text & "', placementno ='" & placementNo.Text & "', acchead ='" & acchead.Text & "', issn ='" & issn.Text & "', status ='" & status.Text & "', lang ='" & lang.Text & "', fileno ='" & fileNo.Text & "', url ='" & url.Text & "', subject ='" & subject.Text & "', periodicity='" & periodicity.SelectedValue & "',pubid = " & publisher.SelectedValue & " , jtype = '" & jtype.SelectedValue & "' , category = '" & category.SelectedValue & "' ,periodType = '" & periodType.SelectedValue & "'  where jcode = " & code.Text
+                        cmdstr = "Update master set title='" & jtitle.Text & "', acqdate ='" & acqdate.Text & "', remark ='" & remark.Text & "', placementno ='" & placementNo.Text & "', acchead ='" & acchead.Text & "', issn ='" & issn.Text & "', status ='" & status.Text & "', lang ='" & lang.Text & "', fileno ='" & fileNo.Text & "', url ='" & url.Text & "', subject ='" & subject.Text & "', periodicity='" & periodicity.SelectedValue & "',pubid = " & publisher.SelectedValue & " , jtype = '" & jtype.SelectedValue & "' , category = '" & category.SelectedValue & "' ,periodType = '" & periodType.SelectedValue & "'  where jcode = " & code.Text
                         cmd = New MySqlCommand(cmdstr, con)
                         cmd.ExecuteNonQuery()
                         con.Close()

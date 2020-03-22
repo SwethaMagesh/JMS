@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="MasterEntry.aspx.vb" Inherits="WebApplication2.WebForm2" MasterPageFile="~/Site.Master" %>
+﻿<%@ Page Title="Master Entry" Language="vb" AutoEventWireup="false" CodeBehind="MasterEntry.aspx.vb" Inherits="WebApplication2.MasterEntry" MasterPageFile="~/Site.Master" %>
 
     <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
         <h2>Master Page</h2>
@@ -72,7 +72,7 @@
                 <tr>
                     <td class="auto-style5">Title*</td>
                     <td class="auto-style3">
-                        <asp:TextBox ID="title" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="jtitle" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
