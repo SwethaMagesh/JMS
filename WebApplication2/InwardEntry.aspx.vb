@@ -6,6 +6,9 @@ Public Class InwardEntry
     Dim cmd As New MySqlCommand
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        If Session("username") Is Nothing Then
+            Response.Redirect("~/Login.aspx", False)
+        End If
         If Not Me.IsPostBack Then
             FromDateBox.Text = DateTime.Today.ToString("yyyy-MM-dd")
             issueDate.Text = Today.ToString("yyyy-MM-dd")

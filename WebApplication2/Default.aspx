@@ -4,36 +4,33 @@
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-<script type="text/javascript">
-    google.load("visualization", "1", { packages: ["corechart"] });
-    google.setOnLoadCallback(drawChart);
-    function drawChart() {
-        var options = {
-            title: 'USA City Distribution'
-        };
-        $.ajax({
-            type: "POST",
-            url: "Default.aspx/GetChartData",
-            data: '{}',
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            success: function (r) {
-                var data = google.visualization.arrayToDataTable(r.d);
-                var chart = new google.visualization.PieChart($("#chart")[0]);
-                chart.draw(data, options);
-            },
-            failure: function (r) {
-                alert(r.d);
-            },
-            error: function (r) {
-                alert(r.d);
-            }
-        });
-    }
-</script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", { packages: ["corechart"] });
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Hours per Day'],
+                ['Work', 11],
+                ['Eat', 2],
+                ['Commute', 2],
+                ['Watch TV', 2],
+                ['Sleep', 7]
+            ]);
 
-<div id="chart" style="width: 900px; height: 500px;">
-</div>
+            var options = {
+                title: 'My Daily Activities',
+                is3D: true,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+            chart.draw(data, options);
+        }
+    </script>
+    <body>
+        <div id="chart" style="width: 900px; height: 500px;"></div>
+    </body>
+
 
 
 </asp:Content>

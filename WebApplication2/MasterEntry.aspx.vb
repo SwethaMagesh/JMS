@@ -6,6 +6,10 @@ Public Class MasterEntry
     Dim con As New MySqlConnection(constr)
     Dim cmd As New MySqlCommand
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        If Session("username") Is Nothing Then
+            Response.Redirect("~/Login.aspx", False)
+        End If
+
         If Not Me.IsPostBack Then
             publisher.Items.Add("--Select--")
             con.Open()

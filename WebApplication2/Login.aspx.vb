@@ -22,6 +22,7 @@ Public Class WebForm5
             If dr.Read() Then
                 If password.Text = dr(0).ToString Then
                     con.Close()
+                    Session("username") = username.Text
                     Response.Redirect("~/Default.aspx", False)
                 Else
                     MsgBox("Password incorrect", 0, "Retry")
