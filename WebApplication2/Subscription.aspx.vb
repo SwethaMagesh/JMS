@@ -7,7 +7,9 @@ Public Class Subscription
     Dim cmd1 As New MySqlCommand
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-
+        If Session("username") Is Nothing Then
+            Response.Redirect("~/Login.aspx", False)
+        End If
         If Not Me.IsPostBack Then
             fromDate.Text = Today.ToString("yyyy-MM-dd")
             paymentDate.Text = Today.ToString("yyyy-MM-dd")

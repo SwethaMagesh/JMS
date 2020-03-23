@@ -9,6 +9,9 @@ Public Class publisher
 
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        If Session("username") Is Nothing Then
+            Response.Redirect("~/Login.aspx", False)
+        End If
         Try
             con.Open()
             Dim cmd As New MySqlCommand
@@ -35,8 +38,6 @@ Public Class publisher
         If Not Me.IsPostBack Then
             pubId.Text = newid
         End If
-
-
     End Sub
 
     Function PublisherTable()
@@ -206,18 +207,10 @@ Public Class publisher
                         newid = newid - 1
                     End If
                     clearContents_Click(Nothing, Nothing)
-
-
                 Catch ex As MySqlException
-
                     MsgBox("error" & ex.ToString)
-
-
                 End Try
-
             End If
-
-
         End If
 
     End Sub
@@ -241,17 +234,10 @@ Public Class publisher
                     MsgBox("Modified successfully")
                     clearContents_Click(Nothing, Nothing)
 
-
                 Catch ex As MySqlException
-
                     MsgBox("error" & ex.ToString)
-
-
                 End Try
-
             End If
-
-
         End If
     End Sub
 End Class

@@ -7,6 +7,9 @@ Public Class WebForm4
     Dim cmd As New MySqlCommand
     Dim cmd1 As New MySqlCommand
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        If Session("username") Is Nothing Then
+            Response.Redirect("~/Login.aspx", False)
+        End If
         Try
             SubscriptionsTable()
         Catch ex As MySql.Data.MySqlClient.MySqlException
